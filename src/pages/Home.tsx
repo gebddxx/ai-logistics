@@ -39,7 +39,7 @@ export default function Home({ onEnter }: Props) {
         {domains.map((d) => {
           const title = d.title[lang]
           const desc = d.desc[lang]
-          const isClickable = d.status === 'done'
+          const isClickable = true
 
           return (
             <div

@@ -10,17 +10,8 @@ interface Props {
   onSelectDomain: (key: string) => void
 }
 
-const LOGISTICS_ITEMS = [
-  { key: 'overview', icon: '📦', labelKey: 'overview' as const },
-  { key: 'warehouse', icon: '🏭', labelKey: 'warehouse' as const },
-  { key: 'transport', icon: '🚛', labelKey: 'transport' as const },
-  { key: 'delivery', icon: '🚁', labelKey: 'delivery' as const },
-  { key: 'prediction', icon: '📊', labelKey: 'prediction' as const },
-  { key: 'operation', icon: '🤖', labelKey: 'operation' as const },
-]
-
 export default function Sidebar({ domain, activePage, onSelectPage, onSelectDomain }: Props) {
-  const { t, lang } = useT()
+  const { lang } = useT()
 
   // Home page: show all domains
   if (domain === null) {
@@ -53,22 +44,24 @@ export default function Sidebar({ domain, activePage, onSelectPage, onSelectDoma
     )
   }
 
-  // Domain page: show sub-modules
+  // Inside a domain: show its sub-modules
+  const currentDomain = domains.find(d => d.key === domain)
+
   return (
     <nav className={styles.sidebar}>
       <div className={styles.sectionTitle}>
-        {t.sidebar.overview ? 'AI Logistics' : 'AI Logistics'}
+        {currentDomain?.title[lang as Lang] ?? domain}
       </div>
-      {LOGISTICS_ITEMS.map((item) => {
-        const isActive = item.key === activePage
+      {currentDomain?.subModules.map((sub) => {
+        const isActive = sub.key === activePage
         return (
           <button
-            key={item.key}
+            key={sub.key}
             className={`${styles.item} ${isActive ? styles.active : ''}`}
-            onClick={() => onSelectPage(item.key)}
+            onClick={() => onSelectPage(sub.key)}
           >
-            <span className={styles.icon}>{item.icon}</span>
-            <span className={styles.label}>{t.sidebar[item.labelKey]}</span>
+            <span className={styles.icon}>{sub.icon}</span>
+            <span className={styles.label}>{sub.title[lang as Lang]}</span>
           </button>
         )
       })}

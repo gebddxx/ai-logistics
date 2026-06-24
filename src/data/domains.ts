@@ -1,3 +1,9 @@
+export interface SubModule {
+  key: string
+  icon: string
+  title: { en: string; 'zh-CN': string; 'zh-TW': string }
+}
+
 export interface Domain {
   key: string
   title: { en: string; 'zh-CN': string; 'zh-TW': string }
@@ -5,6 +11,7 @@ export interface Domain {
   desc: { en: string; 'zh-CN': string; 'zh-TW': string }
   color: string
   status: 'done' | 'wip' | 'planned'
+  subModules: SubModule[]
 }
 
 export const domains: Domain[] = [
@@ -19,6 +26,14 @@ export const domains: Domain[] = [
     },
     color: '#3b82f6',
     status: 'done',
+    subModules: [
+      { key: 'overview', icon: '📦', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'warehouse', icon: '🏭', title: { en: 'Smart Warehousing', 'zh-CN': '智能仓储', 'zh-TW': '智慧倉儲' } },
+      { key: 'transport', icon: '🚛', title: { en: 'Transport Dispatch', 'zh-CN': '运输调度', 'zh-TW': '運輸調度' } },
+      { key: 'delivery', icon: '🚁', title: { en: 'Last-Mile Delivery', 'zh-CN': '末端配送', 'zh-TW': '末端配送' } },
+      { key: 'prediction', icon: '📊', title: { en: 'Prediction & Decision', 'zh-CN': '预测决策', 'zh-TW': '預測決策' } },
+      { key: 'operation', icon: '🤖', title: { en: 'Operations & Service', 'zh-CN': '运营客服', 'zh-TW': '運營客服' } },
+    ],
   },
   {
     key: 'healthcare',
@@ -31,6 +46,13 @@ export const domains: Domain[] = [
     },
     color: '#10b981',
     status: 'planned',
+    subModules: [
+      { key: 'overview', icon: '🏥', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'imaging', icon: '🩻', title: { en: 'Medical Imaging', 'zh-CN': '医学影像', 'zh-TW': '醫學影像' } },
+      { key: 'drug', icon: '💊', title: { en: 'Drug Discovery', 'zh-CN': '药物研发', 'zh-TW': '藥物研發' } },
+      { key: 'clinical', icon: '🩺', title: { en: 'Clinical Decision', 'zh-CN': '临床决策', 'zh-TW': '臨床決策' } },
+      { key: 'care', icon: '❤️', title: { en: 'Patient Care', 'zh-CN': '患者护理', 'zh-TW': '患者護理' } },
+    ],
   },
   {
     key: 'education',
@@ -43,6 +65,13 @@ export const domains: Domain[] = [
     },
     color: '#8b5cf6',
     status: 'planned',
+    subModules: [
+      { key: 'overview', icon: '📚', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'personalized', icon: '🎯', title: { en: 'Personalized Learning', 'zh-CN': '个性化学习', 'zh-TW': '個性化學習' } },
+      { key: 'tutoring', icon: '🧑‍🏫', title: { en: 'AI Tutoring', 'zh-CN': 'AI辅导', 'zh-TW': 'AI輔導' } },
+      { key: 'grading', icon: '✅', title: { en: 'Auto Grading', 'zh-CN': '自动评分', 'zh-TW': '自動評分' } },
+      { key: 'content', icon: '📝', title: { en: 'Content Generation', 'zh-CN': '内容生成', 'zh-TW': '內容生成' } },
+    ],
   },
   {
     key: 'finance',
@@ -55,6 +84,13 @@ export const domains: Domain[] = [
     },
     color: '#f59e0b',
     status: 'planned',
+    subModules: [
+      { key: 'overview', icon: '💰', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'fraud', icon: '🔒', title: { en: 'Fraud Detection', 'zh-CN': '欺诈检测', 'zh-TW': '欺詐檢測' } },
+      { key: 'trading', icon: '📈', title: { en: 'Algo Trading', 'zh-CN': '算法交易', 'zh-TW': '算法交易' } },
+      { key: 'risk', icon: '⚠️', title: { en: 'Risk Assessment', 'zh-CN': '风险评估', 'zh-TW': '風險評估' } },
+      { key: 'wealth', icon: '💎', title: { en: 'Wealth Management', 'zh-CN': '智能理财', 'zh-TW': '智能理財' } },
+    ],
   },
   {
     key: 'manufacturing',
@@ -67,6 +103,13 @@ export const domains: Domain[] = [
     },
     color: '#ef4444',
     status: 'planned',
+    subModules: [
+      { key: 'overview', icon: '🏗️', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'maintenance', icon: '🔧', title: { en: 'Predictive Maintenance', 'zh-CN': '预测性维护', 'zh-TW': '預測性維護' } },
+      { key: 'quality', icon: '🔍', title: { en: 'Quality Inspection', 'zh-CN': '质量检测', 'zh-TW': '質量檢測' } },
+      { key: 'supplychain', icon: '🔗', title: { en: 'Supply Chain', 'zh-CN': '供应链优化', 'zh-TW': '供應鏈優化' } },
+      { key: 'digitaltwin', icon: '🔄', title: { en: 'Digital Twins', 'zh-CN': '数字孪生', 'zh-TW': '數字孿生' } },
+    ],
   },
   {
     key: 'agriculture',
@@ -79,5 +122,12 @@ export const domains: Domain[] = [
     },
     color: '#06b6d4',
     status: 'planned',
+    subModules: [
+      { key: 'overview', icon: '🌾', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
+      { key: 'precision', icon: '🎯', title: { en: 'Precision Farming', 'zh-CN': '精准农业', 'zh-TW': '精準農業' } },
+      { key: 'monitoring', icon: '🛰️', title: { en: 'Crop Monitoring', 'zh-CN': '作物监测', 'zh-TW': '作物監測' } },
+      { key: 'yield', icon: '📊', title: { en: 'Yield Prediction', 'zh-CN': '产量预测', 'zh-TW': '產量預測' } },
+      { key: 'harvest', icon: '🚜', title: { en: 'Auto Harvesting', 'zh-CN': '自动收割', 'zh-TW': '自動收割' } },
+    ],
   },
 ]

@@ -12,6 +12,9 @@ import Transport from './pages/Transport'
 import Delivery from './pages/Delivery'
 import Prediction from './pages/Prediction'
 import Operation from './pages/Operation'
+import DomainPlaceholder from './pages/DomainPlaceholder'
+import { domains } from './data/domains'
+import type { Lang } from './i18n/translations'
 import styles from './App.module.css'
 
 const LOGISTICS_PAGES: Record<string, React.ReactNode> = {
@@ -72,6 +75,12 @@ function AppContent() {
     setActivePage('overview')
   }
 
+  const renderPage = () => {
+    if (domain === null) return <Home onEnter={handleEnterDomain} />
+    if (domain === 'logistics') return LOGISTICS_PAGES[activePage] ?? <Overview />
+    return <DomainPlaceholder domainKey={domain} subPage={activePage} />
+  }
+
   const handleBack = () => {
     setDomain(null)
   }
@@ -94,11 +103,7 @@ function AppContent() {
             onBack={handleBack}
             onSelectPage={setActivePage}
           />
-          {domain === null ? (
-            <Home onEnter={handleEnterDomain} />
-          ) : (
-            LOGISTICS_PAGES[activePage] ?? <Overview />
-          )}
+          {renderPage()}
         </main>
       </div>
     </div>
@@ -111,28 +116,22 @@ function BreadcrumbBlock({ domain, activePage, onBack, onSelectPage }: {
   onBack: () => void
   onSelectPage: (key: string) => void
 }) {
-  const { t } = useT()
+  const { lang } = useT()
 
   if (!domain) {
-    return (
-      <Breadcrumb path={[]} />
-    )
+    return <Breadcrumb path={[]} />
   }
 
-  const pageLabels: Record<string, string> = {
-    overview: t.sidebar.overview,
-    warehouse: t.sidebar.warehouse,
-    transport: t.sidebar.transport,
-    delivery: t.sidebar.delivery,
-    prediction: t.sidebar.prediction,
-    operation: t.sidebar.operation,
-  }
+  const d = domains.find(dd => dd.key === domain)
+  const domainLabel = d?.title[lang as Lang] ?? domain
+  const sub = d?.subModules.find(s => s.key === activePage)
+  const pageLabel = sub?.title[lang as Lang] ?? activePage
 
   return (
     <Breadcrumb
       path={[
-        { label: 'AI Logistics', onClick: onBack },
-        { label: pageLabels[activePage] ?? activePage, onClick: () => onSelectPage(activePage) },
+        { label: domainLabel, onClick: onBack },
+        { label: pageLabel, onClick: () => onSelectPage(activePage) },
       ]}
     />
   )
