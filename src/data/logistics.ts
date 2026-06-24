@@ -1,4 +1,4 @@
-// 从 rdm.md 提取的结构化数据
+// Structured data extracted from rdm.md
 
 export interface StatItem {
   label: string;
@@ -31,167 +31,167 @@ export interface PageData {
 
 export const pages: Record<string, PageData> = {
   warehouse: {
-    title: '智能仓储',
-    subtitle: '计算机视觉 · AMR · 智能算法',
+    title: 'Smart Warehousing',
+    subtitle: 'Computer Vision · AMR · Intelligent Algorithms',
     icon: '🏭',
     stats: [
-      { label: '运营成本降低', value: '20%', trend: 'down' },
-      { label: '煤炭物流运能', value: '500万吨', sub: '原200万吨', trend: 'up' },
-      { label: '九州通拣选效率', value: '"货到人"模式', sub: '替代传统人找货' },
+      { label: 'Op Cost Reduction', value: '20%', trend: 'down' },
+      { label: 'Coal Logistics Capacity', value: '5M tons', sub: 'was 2M tons', trend: 'up' },
+      { label: 'JD Health Picking', value: '"Goods-to-Person"', sub: 'Replaced manual search' },
     ],
     cases: [
       {
-        title: '"货到人"拣选',
+        title: 'Goods-to-Person Picking',
         items: [
-          { company: '九州通', detail: '医药物流中心用机器人把货架搬到分拣员面前，替代了"人找货"模式' },
-          { company: '亚马逊', detail: '通过AI优化机器人路径，运营成本降低20%' },
+          { company: 'JD Health (九州通)', detail: 'Robots bring shelves to pickers, replacing the traditional "person-to-goods" model in pharmaceutical logistics.' },
+          { company: 'Amazon', detail: 'AI-optimized robot routing reduced operational costs by 20%.' },
         ],
       },
       {
-        title: '智能运营管理',
+        title: 'Smart Operations Management',
         items: [
-          { company: '玉湖冷链', detail: '用AI调度冷库作业、预警临期商品，保障冷链品质' },
-          { company: '中科富创', detail: '物流大模型让煤炭物流园实现全程无人化，运能从200万吨跃升至近500万吨' },
+          { company: 'Yuhu Cold Chain (玉湖冷链)', detail: 'AI schedules cold storage operations and alerts on near-expiry goods, ensuring cold chain quality.' },
+          { company: 'Zhongke Fuchuang (中科富创)', detail: 'Logistics LLM achieved fully unmanned coal logistics park, scaling capacity from 2M to nearly 5M tons.' },
         ],
       },
     ],
   },
   transport: {
-    title: '智能运输调度',
-    subtitle: '决策式AI · 路径优化 · 大数据分析',
+    title: 'Smart Transport Dispatch',
+    subtitle: 'Decision AI · Route Optimization · Big Data Analytics',
     icon: '🚛',
     stats: [
-      { label: '卡车装载率', value: '97%', sub: '优化前90%', trend: 'up' },
-      { label: '燃油成本降低', value: '15%', trend: 'down' },
-      { label: '每日减少车次', value: '10+', sub: '香港某连锁超市', trend: 'down' },
+      { label: 'Truck Load Rate', value: '97%', sub: 'was 90% before', trend: 'up' },
+      { label: 'Fuel Cost Reduction', value: '15%', trend: 'down' },
+      { label: 'Daily Trips Saved', value: '10+', sub: 'HK supermarket chain', trend: 'down' },
     ],
     cases: [
       {
-        title: '动态路线规划',
+        title: 'Dynamic Route Planning',
         items: [
-          { company: '多点', detail: '智能调度系统帮助香港某连锁超市每天减少10趟以上车次' },
-          { company: '快递/零售企业', detail: 'AI结合实时路况为车辆规划最优配送路线' },
+          { company: 'Dmall (多点)', detail: 'Intelligent dispatch system helped a Hong Kong supermarket chain reduce 10+ trips per day.' },
+          { company: 'Express/Retail Companies', detail: 'AI combines real-time traffic data to plan optimal delivery routes.' },
         ],
       },
       {
-        title: '智能配载与装车',
+        title: 'Smart Load Planning',
         items: [
-          { company: '埃森哲', detail: 'AI优化货物托盘摆放方案，卡车装载率从90%提升至97%，降低15%燃油成本' },
+          { company: 'Accenture', detail: 'AI optimizes pallet loading layouts — truck load rate up from 90% to 97%, fuel costs down 15%.' },
         ],
       },
     ],
     chart: {
       data: [
-        { name: '装载率', 优化前: 90, 优化后: 97 },
-        { name: '燃油成本指数', 优化前: 100, 优化后: 85 },
+        { name: 'Load Rate (%)', Before: 90, After: 97 },
+        { name: 'Fuel Cost Index', Before: 100, After: 85 },
       ],
       bars: [
-        { key: '优化前', label: '优化前', color: '#94a3b8' },
-        { key: '优化后', label: '优化后', color: '#3b82f6' },
+        { key: 'Before', label: 'Before', color: '#94a3b8' },
+        { key: 'After', label: 'After', color: '#3b82f6' },
       ],
     },
   },
   delivery: {
-    title: '"最后一公里"配送',
-    subtitle: '自动驾驶 · 无人机技术 · 智能调度',
+    title: 'Last-Mile Delivery',
+    subtitle: 'Autonomous Driving · Drone Tech · Smart Dispatch',
     icon: '🚁',
     stats: [
-      { label: '美团无人机配送', value: '数十万单', sub: '深圳区域' },
-      { label: '配送模式', value: '无人车+无人机', sub: '园区/社区/冷链' },
+      { label: 'Meituan Drone Orders', value: 'Hundreds of thousands', sub: 'Shenzhen area' },
+      { label: 'Delivery Modes', value: 'AGV + Drone', sub: 'Parks / Communities / Cold Chain' },
     ],
     cases: [
       {
-        title: '无人车配送',
+        title: 'Autonomous Vehicle Delivery',
         items: [
-          { company: '多城市园区', detail: '无人车在园区、社区配送已较为成熟，实现非接触式末端交付' },
+          { company: 'Multiple City Parks', detail: 'AGVs are now mature for campus and community delivery, enabling contactless last-mile handoff.' },
         ],
       },
       {
-        title: '无人机配送',
+        title: 'Drone Delivery',
         items: [
-          { company: '美团', detail: '在深圳完成数十万单无人机外卖配送，突破地面交通限制' },
-          { company: '玉湖冷链', detail: '在成都园区探索无人机冷链配送场景，生鲜直达' },
+          { company: 'Meituan (美团)', detail: 'Completed hundreds of thousands of drone food deliveries in Shenzhen, bypassing ground traffic.' },
+          { company: 'Yuhu Cold Chain (玉湖冷链)', detail: 'Piloted drone cold-chain delivery at Chengdu campus — fresh produce delivered by air.' },
         ],
       },
     ],
     chart: {
       data: [
-        { name: '无人车', 覆盖场景数: 3 },
-        { name: '无人机', 覆盖场景数: 2 },
-        { name: '传统人工', 覆盖场景数: 5 },
+        { name: 'AGV', 'Scenarios': 3 },
+        { name: 'Drone', 'Scenarios': 2 },
+        { name: 'Manual', 'Scenarios': 5 },
       ],
       bars: [
-        { key: '覆盖场景数', label: '覆盖场景数', color: '#8b5cf6' },
+        { key: 'Scenarios', label: 'Scenarios Covered', color: '#8b5cf6' },
       ],
     },
   },
   prediction: {
-    title: '全链路预测与决策',
-    subtitle: '生成式AI · 机器学习 · 预测模型',
+    title: 'Prediction & Decision',
+    subtitle: 'Generative AI · Machine Learning · Forecasting Models',
     icon: '📊',
     stats: [
-      { label: '预测准确率提升', value: '40%', trend: 'up' },
-      { label: '缺货率降低', value: '35%-45%', trend: 'down' },
-      { label: '风控提前预警', value: '3-5天', sub: '极兔速递' },
+      { label: 'Forecast Accuracy Gain', value: '+40%', trend: 'up' },
+      { label: 'Stockout Rate Drop', value: '35%-45%', trend: 'down' },
+      { label: 'Risk Early Warning', value: '3-5 days', sub: 'J&T Express' },
     ],
     cases: [
       {
-        title: '需求预测',
+        title: 'Demand Forecasting',
         items: [
-          { company: '埃森哲', detail: 'AI分析历史销售、市场趋势、天气等数据，预测准确率提高40%，缺货率降低35%-45%' },
-          { company: '零售企业', detail: '提前指导商家备货分仓，降低库存积压和断货风险' },
+          { company: 'Accenture', detail: 'AI analyzes sales history, market trends, and weather data — forecast accuracy up 40%, stockout rate down 35%-45%.' },
+          { company: 'Retail Enterprises', detail: 'Pre-position inventory across warehouses to reduce both overstock and stockout risks.' },
         ],
       },
       {
-        title: '供应链风控',
+        title: 'Supply Chain Risk Control',
         items: [
-          { company: '极兔速递', detail: 'AI模型能在客户投诉前3-5天就识别出有风险的运单，提前介入处理' },
+          { company: 'J&T Express (极兔速递)', detail: 'AI model identifies at-risk shipments 3-5 days before customer complaints, enabling proactive intervention.' },
         ],
       },
     ],
     chart: {
       data: [
-        { name: '预测准确率', 传统方式: 60, AI预测: 84 },
-        { name: '缺货率', 传统方式: 30, AI预测: 18 },
-        { name: '风控响应(天)', 传统方式: 0.5, AI预测: 4 },
+        { name: 'Forecast Accuracy (%)', Traditional: 60, 'AI-Powered': 84 },
+        { name: 'Stockout Rate (%)', Traditional: 30, 'AI-Powered': 18 },
+        { name: 'Risk Response (days)', Traditional: 0.5, 'AI-Powered': 4 },
       ],
       bars: [
-        { key: '传统方式', label: '传统方式', color: '#94a3b8' },
-        { key: 'AI预测', label: 'AI预测', color: '#10b981' },
+        { key: 'Traditional', label: 'Traditional', color: '#94a3b8' },
+        { key: 'AI-Powered', label: 'AI-Powered', color: '#10b981' },
       ],
     },
   },
   operation: {
-    title: '运营与客服',
-    subtitle: '大语言模型 · NLP · RPA',
+    title: 'Operations & Service',
+    subtitle: 'LLM · NLP · RPA',
     icon: '🤖',
     stats: [
-      { label: 'AI日处理', value: '3,000单', sub: '人工仅200单/天' },
-      { label: 'AI准确率', value: '99.99%', sub: '人工准确率92%' },
-      { label: '效率提升', value: '15倍', sub: '录单场景' },
+      { label: 'AI Daily Throughput', value: '3,000 orders', sub: 'Manual: 200/day' },
+      { label: 'AI Accuracy', value: '99.99%', sub: 'Manual: 92%' },
+      { label: 'Efficiency Gain', value: '15×', sub: 'Order entry scenario' },
     ],
     cases: [
       {
-        title: '智能录单',
+        title: 'Intelligent Order Entry',
         items: [
-          { company: '牛卡福', detail: 'AI自动识别微信、表格、图片中的订单信息并录入，日处理3000单、准确率99.99%；人工仅200单、准确率92%' },
+          { company: 'Niukafu (牛卡福)', detail: 'AI auto-recognizes orders from WeChat, spreadsheets, and images — 3,000 orders/day at 99.99% accuracy vs. manual 200/day at 92%.' },
         ],
       },
       {
-        title: '数字员工与智能客服',
+        title: 'Digital Employees & Smart CS',
         items: [
-          { company: '韵达', detail: '"小达"客服机器人自动理解和应答客户问题，7×24小时在线' },
-          { company: '物流企业', detail: 'AI数字员工自动完成对账、开票、报表等重复性工作' },
+          { company: 'Yunda (韵达)', detail: '"Xiaoda" customer-service bot understands and responds to inquiries automatically, 24/7.' },
+          { company: 'Logistics Enterprises', detail: 'AI digital employees automate reconciliation, invoicing, and reporting tasks.' },
         ],
       },
     ],
     chart: {
       data: [
-        { name: '日处理量(单)', 人工: 200, AI: 3000 },
-        { name: '准确率(%)', 人工: 92, AI: 99.99 },
+        { name: 'Daily Volume (orders)', Manual: 200, AI: 3000 },
+        { name: 'Accuracy (%)', Manual: 92, AI: 99.99 },
       ],
       bars: [
-        { key: '人工', label: '人工', color: '#94a3b8' },
+        { key: 'Manual', label: 'Manual', color: '#94a3b8' },
         { key: 'AI', label: 'AI', color: '#f59e0b' },
       ],
     },
@@ -199,3 +199,33 @@ export const pages: Record<string, PageData> = {
 };
 
 export const pageKeys = Object.keys(pages);
+
+// Overview dashboard summary data
+export const overview = {
+  title: 'Overview',
+  subtitle: 'AI Logistics Panorama · Five Core Scenarios',
+  icon: '📦',
+  summary: 'AI is deeply embedded across the logistics chain — from smart warehousing to last-mile delivery. These five scenarios are reshaping the entire industry. Below is a summary of key metrics from each area.',
+  stats: [
+    { label: 'Warehouse Op Cost', value: '↓20%', sub: 'Amazon AI optimization', trend: 'down' as const },
+    { label: 'Truck Load Rate', value: '97%', sub: 'Up from 90%', trend: 'up' as const },
+    { label: 'Drone Deliveries', value: '100K+', sub: 'Meituan Shenzhen' },
+    { label: 'Forecast Accuracy', value: '+40%', sub: 'Accenture', trend: 'up' as const },
+    { label: 'AI Entry Accuracy', value: '99.99%', sub: 'Niukafu', trend: 'up' as const },
+    { label: 'Risk Early Warning', value: '3-5 days', sub: 'J&T Express' },
+  ],
+  pieData: [
+    { name: 'Smart Warehousing', value: 20, color: '#3b82f6' },
+    { name: 'Transport Dispatch', value: 22, color: '#10b981' },
+    { name: 'Last-Mile Delivery', value: 18, color: '#8b5cf6' },
+    { name: 'Prediction & Decision', value: 25, color: '#f59e0b' },
+    { name: 'Operations & Service', value: 15, color: '#ef4444' },
+  ],
+  highlights: [
+    { module: 'Smart Warehouse', company: 'Zhongke Fuchuang', result: 'Capacity: 2M → 5M tons' },
+    { module: 'Transport', company: 'Accenture', result: 'Load rate: 90% → 97%' },
+    { module: 'Last-Mile', company: 'Meituan Drones', result: '100K+ orders in Shenzhen' },
+    { module: 'Prediction', company: 'J&T Express', result: '3-5 day early warning' },
+    { module: 'Operations', company: 'Niukafu', result: '15× efficiency gain' },
+  ],
+};

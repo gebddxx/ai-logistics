@@ -9,12 +9,12 @@
 .title {
   font-size: 24px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text);
 }
 
 .subtitle {
   font-size: 14px;
-  color: #64748b;
+  color: var(--text-secondary);
   margin-top: 6px;
 }
 
@@ -35,19 +35,20 @@
 }
 
 .caseCard {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .caseTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--text);
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border);
 }
 
 .caseItem {
@@ -60,8 +61,8 @@
 
 .company {
   display: inline-block;
-  background: #eff6ff;
-  color: #2563eb;
+  background: var(--tag-bg);
+  color: var(--tag-text);
   font-weight: 600;
   font-size: 13px;
   padding: 2px 10px;
@@ -71,21 +72,95 @@
 
 .detail {
   font-size: 14px;
-  color: #475569;
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
 /* 图表区 */
 .chart {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .chartTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--text);
   margin-bottom: 16px;
+}
+
+/* 首页特色样式 */
+.summary {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.highlightCard {
+  background: var(--bg-card);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.highlightBadge {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.highlightBody {
+  flex: 1;
+}
+
+.highlightCase {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.highlightResult {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.pieSection {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .highlights {
+    grid-template-columns: 1fr;
+  }
 }
