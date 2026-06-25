@@ -14,18 +14,29 @@ const links: ToolLink[] = [
   { name:'腾讯元宝',url:'https://yuanbao.tencent.com/',desc:{en:'Tencent AI, WeChat integration',zh:'腾讯混元大模型,微信生态深度集成'},cat:'llm',icon:'💬'},
   { name:'讯飞星火',url:'https://xinghuo.xfyun.cn/',desc:{en:'iFlytek, strong voice + text, education focus',zh:'科大讯飞出品,语音+文本双强,教育场景专长'},cat:'llm',icon:'🔥'},
   { name:'360智脑',url:'https://ai.360.com/',desc:{en:'360 AI, integrated browser & search',zh:'360出品,集成浏览器和搜索,安全导向'},cat:'llm',icon:'🛡️'},
+  { name:'智谱清言',url:'https://chatglm.cn/',desc:{en:'Zhipu AI, GLM series, code & reasoning strong',zh:'清华智谱,GLM系列模型,编程推理能力强'},cat:'llm',icon:'🧠'},
+  { name:'百川智能',url:'https://www.baichuan-ai.com/',desc:{en:'Baichuan AI, medical & legal domain models',zh:'百川大模型,医疗/法律等垂直领域模型'},cat:'llm',icon:'💧'},
+  { name:'MiniMax海螺',url:'https://hailuoai.com/',desc:{en:'MiniMax AI, strong voice & music generation',zh:'MiniMax出品,语音合成和音乐生成能力突出'},cat:'llm',icon:'🐚'},
+  { name:'阶跃星辰',url:'https://www.stepfun.com/',desc:{en:'StepFun AI, multi-modal, strong reasoning',zh:'阶跃星辰,多模态+强推理,万亿参数'},cat:'llm',icon:'⭐'},
+  { name:'零一万物',url:'https://www.01.ai/',desc:{en:'Kai-Fu Lee, Yi series, cost-effective',zh:'李开复创办,Yi系列模型,高性价比'},cat:'llm',icon:'🔮'},
+  { name:'天工AI',url:'https://www.tiangong.cn/',desc:{en:'Kunlun Wanwei, AI search + chat',zh:'昆仑万维出品,搜索+聊天一体化'},cat:'llm',icon:'☁️'},
   { name:'Poe',url:'https://poe.com/',desc:{en:'Quora, access GPT-4/Claude/Gemini in one app',zh:'Quora出品,一个App同时用GPT-4/Claude/Gemini'},cat:'llm',icon:'📬'},
   { name:'HuggingChat',url:'https://huggingface.co/chat/',desc:{en:'Free open-source chat, community models',zh:'免费开源聊天,社区模型,无需注册'},cat:'llm',icon:'🤗'},
   { name:'Perplexity',url:'https://www.perplexity.ai/',desc:{en:'Search + chat combo, real-time citations',zh:'搜索+对话二合一,实时引用来源'},cat:'llm',icon:'🔍'},
   { name:'Grok',url:'https://x.com/i/grok',desc:{en:'xAI, real-time X data, witty personality',zh:'马斯克xAI出品,实时获取X平台数据'},cat:'llm',icon:'❌'},
   { name:'Mistral Le Chat',url:'https://chat.mistral.ai/',desc:{en:'European LLM, fast, multilingual',zh:'欧洲大模型,速度快,多语言支持好'},cat:'llm',icon:'🌬️'},
+  { name:'Coze',url:'https://www.coze.com/',desc:{en:'ByteDance AI bot builder, plugins + workflows',zh:'字节跳动AI Bot搭建平台,插件+工作流'},cat:'llm',icon:'🤖'},
   { name:'Character.AI',url:'https://character.ai/',desc:{en:'Create & chat with AI personas',zh:'创建AI角色并对话,支持名人/虚拟角色'},cat:'role',icon:'🎭'},
   { name:'Replika',url:'https://replika.ai/',desc:{en:'AI companion for emotional support',zh:'AI情感伴侣,提供陪伴和倾诉'},cat:'role',icon:'💝'},
   { name:'Pi',url:'https://pi.ai/',desc:{en:'Inflection AI, empathetic conversational AI',zh:'富有同理心的AI对话伙伴'},cat:'role',icon:'π'},
+  { name:'星野',url:'https://www.xingye.com/',desc:{en:'Chinese AI character chat, immersive roleplay',zh:'国产AI角色聊天,沉浸式角色扮演'},cat:'role',icon:'🌠'},
+  { name:'筑梦岛',url:'https://www.muachat.com/',desc:{en:'AI virtual companion, diverse character library',zh:'AI虚拟陪伴,丰富角色库,情感对话'},cat:'role',icon:'🏝️'},
   { name:'OpenRouter',url:'https://openrouter.ai/',desc:{en:'Unified API for 200+ models, price comparison',zh:'200+模型统一API,比价和切换一站式'},cat:'compare',icon:'🚦'},
   { name:'LMSYS Arena',url:'https://chat.lmsys.org/',desc:{en:'Blind test LLMs, Elo leaderboard',zh:'盲测大模型,查看Elo天梯排名'},cat:'compare',icon:'⚔️'},
   { name:'Artificial Analysis',url:'https://artificialanalysis.ai/',desc:{en:'LLM quality, speed & price benchmarks',zh:'大模型质量/速度/价格全面基准测试'},cat:'compare',icon:'📊'},
   { name:'HuggingFace Leaderboard',url:'https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard',desc:{en:'Open LLM rankings, community-voted',zh:'开源大模型排行榜,社区投票评选'},cat:'compare',icon:'🏆'},
+  { name:'SuperCLUE',url:'https://www.superclueai.com/',desc:{en:'Chinese LLM benchmark, comprehensive evaluation',zh:'中文大模型评测基准,综合性中文能力评估'},cat:'compare',icon:'🏅'},
+  { name:'C-Eval',url:'https://cevalbenchmark.com/',desc:{en:'Chinese LLM evaluation benchmark, 52 subjects',zh:'中文大模型评测,覆盖52个学科'},cat:'compare',icon:'📏'},
 ]
 
 export default function ChatOverview({ scrollTo }: { scrollTo?: string }) {
@@ -35,7 +46,7 @@ export default function ChatOverview({ scrollTo }: { scrollTo?: string }) {
     <div className={styles.page}>
       <div className={styles.head}>
         <h2 className={styles.title}>💬 {L('AI Chat & Assistants','AI 对话助手','AI 對話助手')}</h2>
-        <p className={styles.subtitle}>{L('23 LLM platforms, role-play bots & model comparison tools','23个大模型平台、角色扮演和模型对比工具','23個大模型平台、角色扮演和模型對比工具')}</p>
+        <p className={styles.subtitle}>{L('34 LLM platforms, role-play bots & model comparison tools','34个大模型平台、角色扮演和模型对比工具','34個大模型平台、角色扮演和模型對比工具')}</p>
       </div>
       <LinkNav links={links} lang={lang as 'en'|'zh-CN'|'zh-TW'} color="#22c55e" scrollTo={scrollTo} catNames={{
         llm: L('LLM Platforms','大模型平台','大模型平台'),

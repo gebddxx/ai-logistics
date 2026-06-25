@@ -10,6 +10,12 @@ const links:ToolLink[]=[
 {name:'Exa',url:'https://exa.ai/',desc:{en:'AI search API, semantic search',zh:'AI搜索API,语义级搜索,适合开发者集成'},cat:'search',icon:'📡'},
 {name:'秘塔AI',url:'https://metaso.cn/',desc:{en:'Chinese AI search, multi-step reasoning',zh:'国产AI搜索,深度多步推理,学术级研究'},cat:'search',icon:'🗼'},
 {name:'天工AI',url:'https://www.tiangong.cn/',desc:{en:'AI search, multimodal',zh:'昆仑万维出品,多模态AI搜索'},cat:'search',icon:'☁️'},
+{name:'纳米搜索',url:'https://www.n.cn/',desc:{en:'360 AI search, one-stop info aggregation',zh:'360出品AI搜索,一站式信息聚合'},cat:'search',icon:'🔬'},
+{name:'知乎直答',url:'https://www.zhihu.com/ai',desc:{en:'Zhihu AI Q&A, community-powered answers',zh:'知乎AI问答,社区知识+AI结合'},cat:'search',icon:'🤔'},
+{name:'百度AI搜索',url:'https://chat.baidu.com/',desc:{en:'Baidu AI search, deep Chinese content',zh:'百度AI搜索,中文内容深度检索'},cat:'search',icon:'🐻'},
+{name:'夸克AI',url:'https://www.quark.cn/',desc:{en:'Alibaba Quark AI browser + search',zh:'阿里夸克AI浏览器+搜索,年轻人首选'},cat:'search',icon:'🟡'},
+{name:'Devv',url:'https://devv.ai/',desc:{en:'AI search engine for developers, code-aware',zh:'面向程序员的AI搜索,代码感知检索'},cat:'search',icon:'💻'},
+{name:'Arc Search',url:'https://arc.net/',desc:{en:'AI mobile browser, Browse for Me',zh:'AI移动浏览器,Browse for Me自动总结网页'},cat:'search',icon:'🌐'},
 {name:'Consensus',url:'https://consensus.app/',desc:{en:'AI search over 200M+ research papers',zh:'AI搜索2亿+学术论文,提取研究结论'},cat:'research',icon:'📜'},
 {name:'Elicit',url:'https://elicit.com/',desc:{en:'AI research assistant, find & extract data',zh:'AI研究助手,查找论文并自动提取数据'},cat:'research',icon:'📊'},
 {name:'Semantic Scholar',url:'https://www.semanticscholar.org/',desc:{en:'Free AI scientific literature search',zh:'免费AI学术文献搜索,覆盖各学科'},cat:'research',icon:'🎓'},
@@ -18,13 +24,20 @@ const links:ToolLink[]=[
 {name:'Connected Papers',url:'https://www.connectedpapers.com/',desc:{en:'Visual graph of related academic papers',zh:'学术论文关联可视化图谱'},cat:'research',icon:'🕸️'},
 {name:'Explainpaper',url:'https://www.explainpaper.com/',desc:{en:'Upload PDF → AI explains confusing parts',zh:'上传论文PDF,AI解释难懂段落'},cat:'research',icon:'📝'},
 {name:'Scholarcy',url:'https://www.scholarcy.com/',desc:{en:'Auto-summarize papers into flashcards',zh:'自动将论文总结为知识卡片'},cat:'research',icon:'📋'},
+{name:'知网AI',url:'https://ai.cnki.net/',desc:{en:'CNKI AI academic search across Chinese papers',zh:'知网AI学术搜索,中文论文深度检索'},cat:'research',icon:'📑'},
+{name:'Aminer',url:'https://www.aminer.cn/',desc:{en:'Tsinghua, academic social network + AI analytics',zh:'清华出品,学术社交网络+AI分析'},cat:'research',icon:'🎓'},
+{name:'arXiv AI',url:'https://arxiv.org/',desc:{en:'AI-assisted paper discovery, open access',zh:'AI辅助论文发现,开放获取预印本'},cat:'research',icon:'📄'},
 {name:'Feedly AI',url:'https://feedly.com/ai/',desc:{en:'AI-curated news, track topics & trends',zh:'AI策展新闻流,追踪话题和趋势'},cat:'discovery',icon:'📰'},
 {name:'Glasp',url:'https://glasp.co/',desc:{en:'Social highlighting + AI summary',zh:'社交化网页高亮+AI摘要,知识共享'},cat:'discovery',icon:'💡'},
 {name:'Raindrop.io',url:'https://raindrop.io/',desc:{en:'Smart bookmark manager with AI tagging',zh:'智能书签管理,AI自动打标签分类'},cat:'discovery',icon:'💧'},
 {name:'Mem.ai',url:'https://mem.ai/',desc:{en:'AI-organized notes, auto-collection',zh:'AI自动整理笔记,智能关联和检索'},cat:'discovery',icon:'🧠'},
 {name:'Pocket',url:'https://getpocket.com/',desc:{en:'Save articles, AI-recommended reads',zh:'稍后阅读,AI推荐你可能感兴趣的文章'},cat:'discovery',icon:'📌'},
 {name:'Inoreader',url:'https://www.inoreader.com/',desc:{en:'AI RSS reader, monitor keywords',zh:'AI增强RSS阅读器,关键词监控'},cat:'discovery',icon:'📡'},
+{name:'今日头条AI',url:'https://www.toutiao.com/',desc:{en:'ByteDance AI news feed, personalized recs',zh:'字节跳动AI新闻推荐,个性化信息流'},cat:'discovery',icon:'📱'},
+{name:'Readwise',url:'https://readwise.io/',desc:{en:'AI highlight resurfacing, spaced repetition',zh:'AI划线重提,间隔重复帮你记住阅读内容'},cat:'discovery',icon:'🔄'},
+{name:'Refind',url:'https://refind.com/',desc:{en:'AI-curated deep dives, what matters to you',zh:'AI精选深度文章,只推送你真正关心的'},cat:'discovery',icon:'🎯'},
+{name:'PandaChat',url:'https://pandachat.ai/',desc:{en:'Chat with any website, PDF, document',zh:'与任意网页/PDF/文档对话,AI即时理解'},cat:'discovery',icon:'🐼'},
 ]
 export default function SearchOverview({ scrollTo }:{ scrollTo?: string }){const{lang}=useT();const L=(e:string,z:string,t:string)=>lang==='zh-CN'?z:lang==='zh-TW'?t:e
-return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🔍 {L('AI Search & Discovery','AI 搜索发现','AI 搜索發現')}</h2><p className={styles.subtitle}>{L('24 AI-powered search, research & discovery tools','24款AI搜索、研究和发现工具','24款AI搜尋、研究和發現工具')}</p></div>
+return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🔍 {L('AI Search & Discovery','AI 搜索发现','AI 搜索發現')}</h2><p className={styles.subtitle}>{L('37 AI-powered search, research & discovery tools','37款AI搜索、研究和内容发现工具','37款AI搜尋、研究和內容發現工具')}</p></div>
 <LinkNav links={links} lang={lang as'en'|'zh-CN'|'zh-TW'} color="#0ea5e9" scrollTo={scrollTo} catNames={{search:L('AI Search Engines','AI 搜索引擎','AI 搜尋引擎'),research:L('AI Research Tools','AI 研究工具','AI 研究工具'),discovery:L('Content Discovery','内容发现','內容發現')}}/></div>)}
