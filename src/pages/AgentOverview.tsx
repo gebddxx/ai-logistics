@@ -1,13 +1,47 @@
-import { useT } from '../contexts/LanguageContext';import styles from './Page.module.css'
-export default function AgentOverview(){const{lang}=useT()
-return(<div className={styles.page}><div className={styles.head}>
-  <h2 className={styles.title}>🤖 {lang==='zh-CN'?'AI 智能体 · 全景总览':lang==='zh-TW'?'AI 智能體 · 全景總覽':'AI Agents · Overview'}</h2>
-  <p className={styles.subtitle}>{lang==='zh-CN'?'构建能自主规划、推理和行动的 AI 智能体':lang==='zh-TW'?'構建能自主規劃、推理和行動的 AI 智能體':'Build AI agents that plan, reason, and act autonomously'}</p></div>
-  <div className={styles.summary}>{lang==='zh-CN'?'2025-2026 被称为"AI Agent 元年"。Agent 不再是简单的问答机器人，而是能自主规划任务、调用工具、执行多步骤工作流的智能体。从个人助理到企业自动化，AI Agent 正在重塑我们与 AI 协作的方式。':'2025-2026 is the "Year of AI Agents." Agents go beyond simple Q&A — they plan tasks, use tools, and execute multi-step workflows autonomously. From personal assistants to enterprise automation, AI agents are reshaping how we collaborate with AI.'}</div>
-  <G items={[
-    {icon:'🧰',tEn:'Agent Frameworks',tZh:'Agent 框架',dEn:'LangChain, CrewAI, AutoGen, Dify — compare and choose the right framework for your needs.',dZh:'LangChain、CrewAI、AutoGen、Dify——对比选择适合你的开发框架。'},
-    {icon:'💬',tEn:'Personal AI Assistants',tZh:'个人 AI 助手',dEn:'Build your own AI assistant that manages calendar, email, research, and daily tasks.',dZh:'搭建管理日历、邮件、调研和日常任务的个人AI助手。'},
-    {icon:'⚡',tEn:'Workflow Automation',tZh:'工作流自动化',dEn:'Connect AI with 5000+ apps via n8n, Make, Zapier. Automate repetitive workflows.',dZh:'通过n8n、Make、Zapier连接5000+应用, 自动化重复工作流。'},
-    {icon:'🕸️',tEn:'Multi-Agent Systems',tZh:'多 Agent 协作',dEn:'Multiple agents collaborating — each with a role — to solve complex problems together.',dZh:'多个Agent分工协作——各自承担不同角色——共同解决复杂问题。'},
-  ]} lang={lang} /></div>)}
-function G({items,lang}:{items:{icon:string;tEn:string;tZh:string;dEn:string;dZh:string}[],lang:string}){return <div className={styles.domainGrid}>{items.map(i=>(<div key={i.icon} className={styles.domainCard} style={{borderTop:'4px solid #6366f1'}}><div className={styles.domainHead}><span className={styles.domainIcon}>{i.icon}</span></div><h3 className={styles.domainTitle}>{lang==='zh-CN'?i.tZh:i.tEn}</h3><p className={styles.domainDesc}>{lang==='zh-CN'?i.dZh:i.dEn}</p></div>))}</div>}
+import { useT } from '../contexts/LanguageContext'
+import LinkNav, { type ToolLink } from '../components/LinkNav'
+import styles from './Page.module.css'
+
+const links: ToolLink[] = [
+  { name:'LangChain',url:'https://www.langchain.com/',desc:'Most popular, 700+ integrations, Python/JS',cat:'frameworks',icon:'🦜'},
+  { name:'CrewAI',url:'https://crewai.com/',desc:'Role-based multi-agent, simple API',cat:'frameworks',icon:'👥'},
+  { name:'AutoGen',url:'https://microsoft.github.io/autogen/',desc:'Microsoft, multi-agent, human-in-loop',cat:'frameworks',icon:'🔄'},
+  { name:'Dify',url:'https://dify.ai/',desc:'Visual LLM workflow, RAG, agents, one-click API',cat:'frameworks',icon:'🧩'},
+  { name:'Coze',url:'https://www.coze.com/',desc:'ByteDance, publish bots to WeChat/DingTalk/Feishu',cat:'frameworks',icon:'🤖'},
+  { name:'n8n',url:'https://n8n.io/',desc:'Self-hosted, 400+ nodes, AI workflow automation',cat:'frameworks',icon:'🔗'},
+  { name:'Flowise',url:'https://flowiseai.com/',desc:'Drag-and-drop LLM chain builder, open source',cat:'frameworks',icon:'🌊'},
+  { name:'Langflow',url:'https://www.langflow.org/',desc:'Visual LangChain builder, low-code',cat:'frameworks',icon:'🧪'},
+  { name:'ChatGPT GPTs',url:'https://chat.openai.com/',desc:'No-code custom GPTs, upload knowledge, share',cat:'assistants',icon:'⚫'},
+  { name:'Claude Projects',url:'https://claude.ai/',desc:'Custom instructions + knowledge base, team sharing',cat:'assistants',icon:'🟠'},
+  { name:'Gemini Gems',url:'https://gemini.google.com/',desc:'Google ecosystem, personalized AI assistants',cat:'assistants',icon:'💎'},
+  { name:'Replit Agent',url:'https://replit.com/',desc:'Natural language→full-stack app, auto-deploy',cat:'assistants',icon:'⚡'},
+  { name:'Devin',url:'https://www.cognition.ai/',desc:'AI software engineer, autonomous coding',cat:'assistants',icon:'🧑‍💻'},
+  { name:'Bolt.new',url:'https://bolt.new/',desc:'StackBlitz, prompt→full-stack app in browser',cat:'assistants',icon:'⚡'},
+  { name:'Make',url:'https://www.make.com/',desc:'2000+ app integrations, visual scenario builder',cat:'workflow',icon:'🧶'},
+  { name:'Zapier',url:'https://zapier.com/',desc:'7000+ apps, easiest automation platform',cat:'workflow',icon:'⚡'},
+  { name:'Retool AI',url:'https://retool.com/',desc:'Build internal AI tools fast, pre-built blocks',cat:'workflow',icon:'🛠️'},
+  { name:'Relevance AI',url:'https://relevanceai.com/',desc:'AI workforce builder, deploy agents at scale',cat:'workflow',icon:'🏭'},
+  { name:'AgentGPT',url:'https://agentgpt.reworkd.ai/',desc:'Autonomous AI agents in browser, goal-based',cat:'multi',icon:'🎯'},
+  { name:'BabyAGI',url:'https://github.com/yoheinakajima/babyagi',desc:'Classic autonomous task-driven agent',cat:'multi',icon:'👶'},
+  { name:'ChatDev',url:'https://github.com/OpenBMB/ChatDev',desc:'Multi-agent software company simulation',cat:'multi',icon:'💼'},
+  { name:'MetaGPT',url:'https://github.com/geekan/MetaGPT',desc:'Multi-agent meta-programming framework',cat:'multi',icon:'🧠'},
+]
+
+export default function AgentOverview() {
+  const { lang } = useT()
+  const L = (e: string, z: string, t: string) => lang === 'zh-CN' ? z : lang === 'zh-TW' ? t : e
+  return (
+    <div className={styles.page}>
+      <div className={styles.head}>
+        <h2 className={styles.title}>🤖 {L('AI Agents & Automation','AI 智能体','AI 智能體')}</h2>
+        <p className={styles.subtitle}>{L('22 tools — Frameworks, Assistants, Workflows, Multi-Agent','22款工具——框架、助手、自动化、多Agent','22款工具——框架、助手、自動化、多Agent')}</p>
+      </div>
+      <LinkNav links={links} lang={lang as 'en'|'zh-CN'|'zh-TW'} color="#6366f1" catNames={{
+        frameworks: L('Agent Frameworks','Agent 框架','Agent 框架'),
+        assistants: L('AI Assistants','AI 助手','AI 助手'),
+        workflow: L('Workflow Automation','工作流自动化','工作流自動化'),
+        multi: L('Multi-Agent Systems','多Agent 系统','多Agent 系統'),
+      }} />
+    </div>
+  )
+}
