@@ -37,7 +37,12 @@ const links:ToolLink[]=[
 {name:'Readwise',url:'https://readwise.io/',desc:{en:'AI highlight resurfacing, spaced repetition',zh:'AI划线重提,间隔重复帮你记住阅读内容'},cat:'discovery',icon:'🔄'},
 {name:'Refind',url:'https://refind.com/',desc:{en:'AI-curated deep dives, what matters to you',zh:'AI精选深度文章,只推送你真正关心的'},cat:'discovery',icon:'🎯'},
 {name:'PandaChat',url:'https://pandachat.ai/',desc:{en:'Chat with any website, PDF, document',zh:'与任意网页/PDF/文档对话,AI即时理解'},cat:'discovery',icon:'🐼'},
+{name:'纳米AI搜索',url:'https://www.n.cn/',desc:{en:'360 AI search, integrated DeepSeek R1, multi-model',zh:'360出品,集成DeepSeek R1满血版,多模型协作搜索'},cat:'search',icon:'🔬'},
+{name:'360AI搜索',url:'https://so.360.com/',desc:{en:'360 AI search, proactive answer extraction',zh:'360AI搜索,主动提炼精准答案'},cat:'search',icon:'🛡️'},
+{name:'天工AI搜索',url:'https://www.tiangong.cn/',desc:{en:'Kunlun Wanwei, intelligent search result aggregation',zh:'昆仑万维出品,海量搜索结果智能聚合'},cat:'search',icon:'☁️'},
+{name:'AIbase',url:'https://www.aibase.com/',desc:{en:'AI tool collection, daily updates, new AI products',zh:'AI工具合集站,每日更新最新AI产品'},cat:'discovery',icon:'🆕'},
+{name:'豌豆AI',url:'https://www.wandouai.com/',desc:{en:'Chinese AI tool navigation, categorized discovery',zh:'国产AI工具导航,分类发现新工具'},cat:'discovery',icon:'🫛'},
 ]
 export default function SearchOverview({ scrollTo }:{ scrollTo?: string }){const{lang}=useT();const L=(e:string,z:string,t:string)=>lang==='zh-CN'?z:lang==='zh-TW'?t:e
-return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🔍 {L('Search & Discovery','搜索发现','搜索發現')}</h2><p className={styles.subtitle}>{L('37 AI-powered search, research & discovery tools','37款AI搜索、研究和内容发现工具','37款AI搜尋、研究和內容發現工具')}</p></div>
+return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🔍 {L('Search & Discovery','搜索发现','搜索發現')}</h2><p className={styles.subtitle}>{L('42 search, research & discovery tools','42款搜索、研究和内容发现工具','42款搜尋、研究和內容發現工具')}</p></div>
 <LinkNav links={links} lang={lang as'en'|'zh-CN'|'zh-TW'} color="#0ea5e9" scrollTo={scrollTo} catNames={{search:L('AI Search Engines','AI 搜索引擎','AI 搜尋引擎'),research:L('AI Research Tools','AI 研究工具','AI 研究工具'),discovery:L('Content Discovery','内容发现','內容發現')}}/></div>)}

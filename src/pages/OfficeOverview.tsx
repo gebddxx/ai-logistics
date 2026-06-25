@@ -18,7 +18,20 @@ const links:ToolLink[]=[
 {name:'Shortwave',url:'https://www.shortwave.com/',desc:{en:'AI thread summaries, smart scheduling',zh:'AI长邮件线程总结,智能日程安排'},cat:'email',icon:'📡'},
 {name:'Spark Mail',url:'https://sparkmailapp.com/',desc:{en:'AI priority inbox, templates, team email',zh:'AI优先级收件箱,模板库,团队协作'},cat:'email',icon:'💌'},
 {name:'Missive',url:'https://missiveapp.com/',desc:{en:'Team email + chat, AI draft & summarize',zh:'团队邮件+聊天,AI起草和总结'},cat:'email',icon:'✉️'},
+{name:'AiPPT',url:'https://www.aippt.cn/',desc:{en:'AI auto-generate PPT outline + template, one-click',zh:'AI自动生成PPT大纲和模板,一键完成'},cat:'ppt',icon:'📊'},
+{name:'Boardmix',url:'https://boardmix.cn/',desc:{en:'AI whiteboard: mind map, flowchart, PPT gen',zh:'AI白板:思维导图/流程图/PPT一键生成'},cat:'ppt',icon:'🖼️'},
+{name:'歌者AI',url:'https://www.gezhe.com/',desc:{en:'Topic/WeChat article/text → PPT generation',zh:'话题/微信文章/文本→PPT自动生成'},cat:'ppt',icon:'🎤'},
+{name:'百度文库AI',url:'https://wenku.baidu.com/',desc:{en:'Baidu Wenku AI, input topic→generate PPT',zh:'百度文库AI,输入主题自动生成PPT'},cat:'ppt',icon:'📚'},
+{name:'WPS AI',url:'https://www.wps.com/ai/',desc:{en:'Kingsoft WPS built-in AI, doc/sheet/slide AI',zh:'金山WPS内置AI,文档/表格/演示全AI化'},cat:'docs',icon:'📎'},
+{name:'Sharly AI',url:'https://www.sharly.ai/',desc:{en:'AI document summarizer, cross-PDF comparison',zh:'AI文档总结,跨PDF对比分析'},cat:'docs',icon:'📊'},
+{name:'司马阅',url:'https://www.simayue.com/',desc:{en:'Chinese AI doc reader, long doc Q&A',zh:'国产AI文档阅读,长文档智能问答'},cat:'docs',icon:'📖'},
+{name:'讯飞听见',url:'https://www.iflyrec.com/',desc:{en:'iFlytek meeting transcription, multi-dialect, real-time',zh:'科大讯飞会议转写,多方言识别,实时出稿'},cat:'meeting',icon:'🎙️'},
+{name:'腾讯会议AI',url:'https://meeting.tencent.com/',desc:{en:'Tencent Meeting AI纪要, auto-chapter, highlights',zh:'腾讯会议AI纪要,自动分段,智能高亮'},cat:'meeting',icon:'💬'},
+{name:'ProcessOn',url:'https://www.processon.com/',desc:{en:'AI mind map, flowchart, UML diagram generation',zh:'AI思维导图/流程图/UML图一键生成'},cat:'meeting',icon:'🔗'},
+{name:'亿图脑图',url:'https://www.edrawsoft.cn/',desc:{en:'AI mind mapping, brainstorming, outline mode',zh:'AI思维导图,头脑风暴,大纲模式'},cat:'meeting',icon:'🧠'},
+{name:'360苏打办公',url:'https://suda.360.cn/',desc:{en:'360 office AI, doc automation, contract templates',zh:'360办公AI,文档自动化,合同模板生成'},cat:'docs',icon:'🛡️'},
+{name:'沉浸式翻译',url:'https://immersivetranslate.com/',desc:{en:'AI bilingual translation, web/PDF/video subtitles',zh:'AI双语翻译,网页/PDF/视频字幕,全网最好用'},cat:'docs',icon:'🌐'},
 ]
 export default function OfficeOverview({ scrollTo }:{ scrollTo?: string }){const{lang}=useT();const L=(e:string,z:string,t:string)=>lang==='zh-CN'?z:lang==='zh-TW'?t:e
-return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>📋 {L('Office & Productivity','办公提效','辦公提效')}</h2><p className={styles.subtitle}>{L('18 tools — PPT, Docs, Meetings, Email','18款工具——PPT、文档、会议、邮件','18款工具——PPT、文檔、會議、郵件')}</p></div>
+return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>📋 {L('Office & Productivity','办公提效','辦公提效')}</h2><p className={styles.subtitle}>{L('32 tools — PPT, Docs, Meetings, Email','32款工具——PPT、文档、会议、邮件','32款工具——PPT、文檔、會議、郵件')}</p></div>
 <LinkNav links={links} lang={lang as'en'|'zh-CN'|'zh-TW'} color="#f97316" scrollTo={scrollTo} catNames={{ppt:L('AI PPT','AI 演示文稿','AI 演示文稿'),docs:L('AI Documents','AI 文档处理','AI 文檔處理'),meeting:L('AI Meeting','AI 会议助手','AI 會議助手'),email:L('AI Email','AI 邮件沟通','AI 郵件溝通')}}/></div>)}

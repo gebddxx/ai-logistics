@@ -37,6 +37,14 @@ const links: ToolLink[] = [
   { name:'HuggingFace Leaderboard',url:'https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard',desc:{en:'Open LLM rankings, community-voted',zh:'开源大模型排行榜,社区投票评选'},cat:'compare',icon:'🏆'},
   { name:'SuperCLUE',url:'https://www.superclueai.com/',desc:{en:'Chinese LLM benchmark, comprehensive evaluation',zh:'中文大模型评测基准,综合性中文能力评估'},cat:'compare',icon:'🏅'},
   { name:'C-Eval',url:'https://cevalbenchmark.com/',desc:{en:'Chinese LLM evaluation benchmark, 52 subjects',zh:'中文大模型评测,覆盖52个学科'},cat:'compare',icon:'📏'},
+  { name:'Trae',url:'https://www.trae.ai/',desc:{en:'ByteDance AI IDE, Chinese-friendly, free Claude 3.7',zh:'字节跳动AI编程IDE,中文友好,免费Claude 3.7'},cat:'code',icon:'💻'},
+  { name:'通义灵码',url:'https://tongyi.aliyun.com/lingma/',desc:{en:'Alibaba AI code assistant, code completion + review',zh:'阿里云AI代码助手,代码补全+评审+测试'},cat:'code',icon:'🧩'},
+  { name:'CodeGeeX',url:'https://codegeex.cn/',desc:{en:'Tsinghua, 20+ languages, cross-language conversion',zh:'清华出品,支持20+语言,跨语言代码转换'},cat:'code',icon:'🔧'},
+  { name:'MarsCode',url:'https://www.marscode.cn/',desc:{en:'ByteDance AI code tool, IDE plugin, cloud IDE',zh:'字节豆包AI代码工具,IDE插件+云端IDE'},cat:'code',icon:'🚀'},
+  { name:'百度Comate',url:'https://comate.baidu.com/',desc:{en:'Baidu AI code gen, error detection, auto-comment',zh:'百度AI代码助手,代码生成+错误检测+注释'},cat:'code',icon:'🐻'},
+  { name:'Coze',url:'https://www.coze.com/',desc:{en:'ByteDance, zero-code AI bot builder, plugins+API',zh:'字节跳动,零代码AI Bot搭建平台,插件+API'},cat:'llm',icon:'🤖'},
+  { name:'Dify',url:'https://dify.ai/',desc:{en:'Open-source LLM app platform, RAG+Agent framework',zh:'开源LLM应用开发平台,RAG+Agent框架'},cat:'llm',icon:'🔮'},
+  { name:'扣子',url:'https://www.coze.cn/',desc:{en:'Coze China, AI bot marketplace, WeChat integration',zh:'Coze国内版,AI Bot商店,微信/飞书集成'},cat:'llm',icon:'🧩'},
 ]
 
 export default function ChatOverview({ scrollTo }: { scrollTo?: string }) {
@@ -46,12 +54,13 @@ export default function ChatOverview({ scrollTo }: { scrollTo?: string }) {
     <div className={styles.page}>
       <div className={styles.head}>
         <h2 className={styles.title}>💬 {L('Chat & Assistants','对话助手','對話助手')}</h2>
-        <p className={styles.subtitle}>{L('34 LLM platforms, role-play bots & model comparison tools','34个大模型平台、角色扮演和模型对比工具','34個大模型平台、角色扮演和模型對比工具')}</p>
+        <p className={styles.subtitle}>{L('43 platforms — LLMs, coding, role-play, benchmarks','43个平台——大模型、编程、角色扮演、评测','43個平台——大模型、編程、角色扮演、評測')}</p>
       </div>
       <LinkNav links={links} lang={lang as 'en'|'zh-CN'|'zh-TW'} color="#22c55e" scrollTo={scrollTo} catNames={{
         llm: L('LLM Platforms','大模型平台','大模型平台'),
+        code: L('AI Coding','AI 编程','AI 編程'),
         role: L('Character & Role-Play','角色扮演','角色扮演'),
-        compare: L('Model Comparison','模型对比','模型對比'),
+        compare: L('Benchmarks','模型评测','模型評測'),
       }} />
     </div>
   )

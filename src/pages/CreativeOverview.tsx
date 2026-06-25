@@ -42,7 +42,32 @@ const links:ToolLink[]=[
 {name:'魔音工坊',url:'https://www.moyin.com/',desc:{en:'Chinese TTS, 100+ voice styles, professional dubbing',zh:'专业中文配音,100+音色,短视频/有声书'},cat:'audio',icon:'🎙️'},
 {name:'讯飞智作',url:'https://peiyin.xunfei.cn/',desc:{en:'iFlytek AI dubbing, voice cloning, multi-dialect',zh:'科大讯飞AI配音,声音克隆,多方言支持'},cat:'audio',icon:'🗣️'},
 {name:'音色工坊',url:'https://yinse.tech/',desc:{en:'AI singing voice synthesis, cover songs',zh:'AI歌声合成,AI翻唱,个性化声音'},cat:'audio',icon:'🎶'},
+{name:'深言达意',url:'https://www.shenyandayi.com/',desc:{en:'Find the perfect word/phrase, academic rewriting',zh:'找词找句,学术改写,精准表达'},cat:'writing',icon:'🔤'},
+{name:'笔灵AI',url:'https://www.bilingai.com/',desc:{en:'One-click work plans, proposals, reports',zh:'一键生成工作计划、文案方案、报告'},cat:'writing',icon:'✒️'},
+{name:'彩云小梦',url:'https://caiyunai.com/',desc:{en:'AI novel continuation, multi-style, drama scripts',zh:'AI续写小说/剧本,多风格支持'},cat:'writing',icon:'🌈'},
+{name:'光速写作',url:'https://www.guangsu.com/',desc:{en:'Zuoyebang AI, full-text gen + PPT creation',zh:'作业帮旗下,全文生成+PPT制作'},cat:'writing',icon:'⚡'},
+{name:'讯飞写作',url:'https://writing.xfyun.cn/',desc:{en:'iFlytek AI writing, templates + dialogue writing',zh:'科大讯飞AI写作,模板写作+素材推荐'},cat:'writing',icon:'📝'},
+{name:'可灵AI',url:'https://klingai.com/',desc:{en:'Kuaishou, top AI image+video gen, high quality',zh:'快手出品,AI生图+视频,画质极高'},cat:'image',icon:'🎬'},
+{name:'即梦AI',url:'https://jimeng.jianying.com/',desc:{en:'ByteDance, top Chinese image gen, Chinese posters',zh:'字节即梦AI,中文海报字,东方美学'},cat:'image',icon:'💫'},
+{name:'创客贴AI',url:'https://www.chuangkit.com/',desc:{en:'Smart poster gen, one-click bg removal, watermark',zh:'智能海报生成,一键抠图,批量去水印'},cat:'image',icon:'🎨'},
+{name:'美图WHEE',url:'https://whee.meitu.com/',desc:{en:'Meitu AI: text-to-image, image-to-image, video',zh:'美图AI:文生图/图生图/文生视频'},cat:'image',icon:'📸'},
+{name:'Vega AI',url:'https://vegaai.net/',desc:{en:'Text/image/pose→image, style transfer',zh:'文生图/图生图/姿态生图,风格迁移'},cat:'image',icon:'🎯'},
+{name:'佐糖',url:'https://zuotang.com/',desc:{en:'Old photo restore, lossless upscale, AI enhancement',zh:'老照片修复,无损放大,AI画质增强'},cat:'image',icon:'🔧'},
+{name:'360智绘',url:'https://ai.360.com/',desc:{en:'360 AI painting, style transfer, LoRA training',zh:'360 AI绘画,风格迁移,LoRA模型训练'},cat:'image',icon:'🛡️'},
+{name:'Recraft',url:'https://www.recraft.ai/',desc:{en:'Designer favorite, vector gen, style transfer',zh:'设计师最爱,矢量图生成,风格迁移'},cat:'image',icon:'✏️'},
+{name:'Ideogram',url:'https://ideogram.ai/',desc:{en:'Text embedding in images, logo/badge gen',zh:'文字嵌入图像超强,Logo/徽章生成'},cat:'image',icon:'🔤'},
+{name:'Flux',url:'https://blackforestlabs.ai/',desc:{en:'Ultra-realistic image gen, open source',zh:'图像逼真度极高,开源免费,社区模型丰富'},cat:'image',icon:'🌿'},
+{name:'Vidu',url:'https://www.vidu.com/',desc:{en:'Top Chinese video model, affordable, Chinese-friendly',zh:'第一流国产视频大模型,价格亲民,中文友好'},cat:'video',icon:'🎞️'},
+{name:'PixVerse',url:'https://pixverse.ai/',desc:{en:'Chinese team, V3.5 fast video gen, viral effects',zh:'国内团队,V3.5快速出视频,毒液特效走红'},cat:'video',icon:'✨'},
+{name:'度加创作',url:'https://dujia.baidu.com/',desc:{en:'Baidu, hot topics→script→video pipeline',zh:'百度出品,热搜一键成稿→文稿一键成片'},cat:'video',icon:'📰'},
+{name:'万兴喵影',url:'https://www.wondershare.cn/',desc:{en:'AI auto clip, speech→subtitles, motion tracking',zh:'AI自动剪辑,语音转字幕,运动跟踪'},cat:'video',icon:'🐱'},
+{name:'海绵音乐',url:'https://haimian.music.163.com/',desc:{en:'Netease AI music, easy entry, casual creation',zh:'网易AI音乐,门槛低,随手创作歌曲'},cat:'audio',icon:'🧽'},
+{name:'网易天音',url:'https://tianyin.music.163.com/',desc:{en:'Netease AI composition, multi-genre arrangement',zh:'网易AI编曲,海量风格智能配乐'},cat:'audio',icon:'🎼'},
+{name:'TME Studio',url:'https://y.qq.com/tme_studio/',desc:{en:'Tencent Music AI, intelligent music generation',zh:'腾讯音乐AI,智能音乐生成'},cat:'audio',icon:'🎹'},
+{name:'海螺AI',url:'https://hailuoai.com/',desc:{en:'MiniMax, natural TTS, precise voice cloning',zh:'MiniMax出品,文本朗读自然,声音克隆精准'},cat:'audio',icon:'🐚'},
+{name:'TTSMaker',url:'https://ttsmaker.com/',desc:{en:'Text-to-speech, 50+ languages, 300+ voice packs',zh:'文本转语音,50+语种,300+语音包'},cat:'audio',icon:'🗣️'},
+{name:'LALAL.AI',url:'https://www.lalal.ai/',desc:{en:'Vocal/instrument separation, lossless quality',zh:'人声/伴奏分离,音质无损'},cat:'audio',icon:'🎵'},
 ]
 export default function CreativeOverview({ scrollTo }:{ scrollTo?: string }){const{lang}=useT();const L=(e:string,z:string,t:string)=>lang==='zh-CN'?z:lang==='zh-TW'?t:e
-return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🎨 {L('Creative Studio','创意工坊','創意工坊')}</h2><p className={styles.subtitle}>{L('42 tools — Writing, Image, Video, Audio','42款工具——写作、绘画、视频、音频','42款工具——寫作、繪畫、影片、音頻')}</p></div>
+return(<div className={styles.page}><div className={styles.head}><h2 className={styles.title}>🎨 {L('Creative Studio','创意工坊','創意工坊')}</h2><p className={styles.subtitle}>{L('68 tools — Writing, Image, Video, Audio','68款工具——写作、绘画、视频、音频','68款工具——寫作、繪畫、影片、音頻')}</p></div>
 <LinkNav links={links} lang={lang as'en'|'zh-CN'|'zh-TW'} color="#ec4899" scrollTo={scrollTo} catNames={{writing:L('AI Writing','AI 写作','AI 寫作'),image:L('AI Image','AI 绘画','AI 繪畫'),video:L('AI Video','AI 视频','AI 影片'),audio:L('AI Audio & Music','AI 音频音乐','AI 音頻音樂')}}/></div>)}
