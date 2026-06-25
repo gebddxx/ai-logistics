@@ -11,7 +11,7 @@ type T = any
 
 export const t: Record<Lang, Record<string, T>> = {
   en: {
-    header: { title: 'AI Logistics Dashboard', badge: 'AI-Powered' },
+    header: { title: 'AI for Everything', badge: 'AI-Powered' },
     sidebar: {
       overview: 'Overview',
       warehouse: 'Smart Warehousing',
@@ -177,7 +177,7 @@ export const t: Record<Lang, Record<string, T>> = {
   },
 
   'zh-CN': {
-    header: { title: 'AI 物流全景数据看板', badge: 'AI驱动' },
+    header: { title: 'AI for Everything', badge: 'AI驱动' },
     sidebar: {
       overview: '总览',
       warehouse: '智能仓储',
@@ -343,7 +343,7 @@ export const t: Record<Lang, Record<string, T>> = {
   },
 
   'zh-TW': {
-    header: { title: 'AI 物流全景數據看板', badge: 'AI驅動' },
+    header: { title: 'AI for Everything', badge: 'AI驅動' },
     sidebar: {
       overview: '總覽',
       warehouse: '智慧倉儲',

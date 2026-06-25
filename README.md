@@ -1,17 +1,32 @@
-# 📦 AI Logistics Dashboard
+# 🌐 AI for Everything
 
-> Visualizing AI applications across five core logistics scenarios — data-driven insights at a glance.
+> AI Empowering Every Industry — a panoramic data dashboard showcasing AI applications across logistics, healthcare, education, finance, manufacturing, agriculture, and beyond.
+
+## ✨ Live Demo
+
+**[gebddxx.github.io/ai-for-everything](https://gebddxx.github.io/ai-for-everything/)**
+
+## 📦 Domains
+
+| Domain | Status |
+|:---|:---|
+| 📦 AI Logistics | ✅ Live — 6 sub-modules with full data |
+| 🏥 AI Healthcare | 🚧 Planned |
+| 📚 AI Education | 🚧 Planned |
+| 💰 AI Finance | 🚧 Planned |
+| 🏗️ AI Manufacturing | 🚧 Planned |
+| 🌾 AI Agriculture | 🚧 Planned |
 
 ## ✨ Features
 
-- 🏠 **Overview** — Key metrics summary + ring chart + benchmark cases
-- 🏭 **Smart Warehousing** — Goods-to-person picking, smart ops management, 20% cost reduction
-- 🚛 **Smart Transport Dispatch** — Dynamic route planning, smart load planning, load rate 90%→97%
-- 🚁 **Last-Mile Delivery** — AGV + drone delivery, 100K+ orders validated
-- 📊 **Prediction & Decision** — Demand forecasting + supply chain risk control, accuracy +40%
-- 🤖 **Operations & Service** — Intelligent order entry + digital employees, 15× efficiency gain
+- 🌐 **Multi-Domain Hub** — One dashboard for all AI industry verticals
+- 🏭 **AI Logistics** — Smart warehousing, transport dispatch, last-mile delivery, demand forecasting, operations automation
 - 🌙 **Dark Mode** — One-click toggle with preference saved
+- 🌍 **i18n** — English / 简体中文 / 繁體中文 with one-click switch
+- 📊 **Charts** — Bar charts, pie charts, and mind maps (Recharts)
 - 📱 **Responsive** — Desktop / tablet / mobile
+- 🧭 **Breadcrumb** — Always know where you are
+- 📂 **Tree Sidebar** — Expandable domain/sub-module navigation
 
 ## 🛠 Tech Stack
 
@@ -20,67 +35,69 @@
 | Framework | React 18 + TypeScript |
 | Build | Vite 5 |
 | Charts | Recharts |
-| Styling | CSS Modules + CSS Variables (dark theme) |
+| Styling | CSS Modules + CSS Variables |
+| i18n | Custom context-based (no extra deps) |
 | Deployment | GitHub Pages |
 
 ## 🚀 Getting Started
 
 ```bash
-# Install dependencies
 npm install
-
-# Start dev server
-npm run dev
-
-# Open http://localhost:5173
+npm run dev        # → http://localhost:5173
 ```
 
 ## 📦 Deploy
 
 ```bash
-# Build for production
-npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
+npm run deploy     # builds and pushes to gh-pages
 ```
 
 ## 📁 Project Structure
 
 ```
-ai-logistics/
+ai-for-everything/
 ├── index.html
 ├── package.json
 ├── vite.config.ts
 ├── tsconfig.json
 ├── README.md
-├── rdm.md                          # Original research document (Chinese)
 └── src/
-    ├── main.tsx                    # Entry point
-    ├── App.tsx                     # Layout + theme provider
-    ├── App.module.css              # Global styles + CSS variables
+    ├── main.tsx
+    ├── App.tsx                       # Router: Home + domain pages
+    ├── App.module.css                # Global styles + CSS variables
     ├── contexts/
-    │   └── ThemeContext.tsx         # Dark/light theme context
+    │   ├── ThemeContext.tsx           # Dark/light theme
+    │   └── LanguageContext.tsx        # i18n (en / zh-CN / zh-TW)
+    ├── i18n/
+    │   └── translations.ts           # All UI strings in 3 languages
     ├── data/
-    │   └── logistics.ts            # Structured data (English)
+    │   ├── domains.ts                # 6 domains + sub-module definitions
+    │   └── logistics.ts              # Logistics stats & charts data
     ├── components/
-    │   ├── Header.tsx              # Top bar + theme toggle
-    │   ├── Sidebar.tsx             # Side navigation
-    │   ├── StatCard.tsx            # Metric card
-    │   ├── BarChart.tsx            # Bar chart wrapper
-    │   └── PieChart.tsx            # Ring chart wrapper
+    │   ├── Header.tsx                # Title bar + lang + theme toggles
+    │   ├── Sidebar.tsx               # Tree-style expandable navigation
+    │   ├── Breadcrumb.tsx            # Home > Domain > Page trail
+    │   ├── StatCard.tsx              # Metric card
+    │   ├── BarChart.tsx              # Bar chart (Recharts)
+    │   ├── PieChart.tsx              # Ring chart (Recharts)
+    │   └── MindMap.tsx               # CSS mind map for overview
     └── pages/
-        ├── Overview.tsx            # Dashboard home
-        ├── Warehouse.tsx           # Smart Warehousing
-        ├── Transport.tsx           # Smart Transport Dispatch
-        ├── Delivery.tsx            # Last-Mile Delivery
-        ├── Prediction.tsx          # Prediction & Decision
-        └── Operation.tsx           # Operations & Service
+        ├── Home.tsx                  # AI for Everything landing page
+        ├── Overview.tsx              # Logistics overview dashboard
+        ├── Warehouse.tsx             # Smart Warehousing
+        ├── Transport.tsx             # Transport Dispatch
+        ├── Delivery.tsx              # Last-Mile Delivery
+        ├── Prediction.tsx            # Prediction & Decision
+        ├── Operation.tsx             # Operations & Service
+        └── DomainPlaceholder.tsx     # Placeholder for planned domains
 ```
 
-## 📊 Data Source
+## 🧩 Adding a New Domain
 
-Based on [rdm.md](rdm.md) — a research report on AI in logistics, covering cases from Amazon, Meituan, J&T Express, Accenture, Niukafu, and more.
+1. Add entry in `src/data/domains.ts` with `key`, `title`, `icon`, `desc`, `color`, `subModules`
+2. Create pages under `src/pages/<domain>/` (or use `DomainPlaceholder`)
+3. Add routing in `App.tsx` if custom pages needed
+4. Deploy — done!
 
 ## 📄 License
 
