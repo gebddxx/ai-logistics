@@ -22,6 +22,21 @@ import LearningReading from './pages/LearningReading'
 import LearningMindmap from './pages/LearningMindmap'
 import LearningKnowledge from './pages/LearningKnowledge'
 import LearningGrowth from './pages/LearningGrowth'
+import CreativeOverview from './pages/CreativeOverview'
+import CreativeWriting from './pages/CreativeWriting'
+import CreativeImage from './pages/CreativeImage'
+import CreativeVideo from './pages/CreativeVideo'
+import CreativeAudio from './pages/CreativeAudio'
+import OfficeOverview from './pages/OfficeOverview'
+import OfficePPT from './pages/OfficePPT'
+import OfficeDocs from './pages/OfficeDocs'
+import OfficeMeeting from './pages/OfficeMeeting'
+import OfficeEmail from './pages/OfficeEmail'
+import AgentOverview from './pages/AgentOverview'
+import AgentFrameworks from './pages/AgentFrameworks'
+import AgentAssistants from './pages/AgentAssistants'
+import AgentWorkflow from './pages/AgentWorkflow'
+import AgentMultiAgent from './pages/AgentMultiAgent'
 import { domains } from './data/domains'
 import type { Lang } from './i18n/translations'
 import styles from './App.module.css'
@@ -99,10 +114,26 @@ function AppContent() {
     growth: <LearningGrowth />,
   }
 
+  const CREATIVE_PAGES: Record<string, React.ReactNode> = {
+    overview: <CreativeOverview />, writing: <CreativeWriting />,
+    image: <CreativeImage />, video: <CreativeVideo />, audio: <CreativeAudio />,
+  }
+  const OFFICE_PAGES: Record<string, React.ReactNode> = {
+    overview: <OfficeOverview />, ppt: <OfficePPT />, docs: <OfficeDocs />,
+    meeting: <OfficeMeeting />, email: <OfficeEmail />,
+  }
+  const AGENT_PAGES: Record<string, React.ReactNode> = {
+    overview: <AgentOverview />, frameworks: <AgentFrameworks />,
+    assistants: <AgentAssistants />, workflow: <AgentWorkflow />, 'multi-agent': <AgentMultiAgent />,
+  }
+
   const renderPage = () => {
     if (domain === null) return <Home onEnter={handleEnterDomain} />
     if (domain === 'vibe-coding') return VIBE_PAGES[activePage] ?? <VibeOverview />
     if (domain === 'learning') return LEARNING_PAGES[activePage] ?? <LearningOverview />
+    if (domain === 'creative') return CREATIVE_PAGES[activePage] ?? <CreativeOverview />
+    if (domain === 'office') return OFFICE_PAGES[activePage] ?? <OfficeOverview />
+    if (domain === 'agents') return AGENT_PAGES[activePage] ?? <AgentOverview />
     if (domain === 'logistics') return LOGISTICS_PAGES[activePage] ?? <Overview />
     return <DomainPlaceholder domainKey={domain} subPage={activePage} />
   }
