@@ -10,13 +10,13 @@ export default function ManufacturingOverview() {
     <div className={styles.page}>
       <div className={styles.head}><h2 className={styles.title}>🏗️ {L('AI in Manufacturing','AI 智能制造','AI 智慧製造')}</h2><p className={styles.subtitle}>{L('How AI powers predictive maintenance, quality inspection, and digital twins','AI如何驱动预测性维护、质量检测和数字孪生','AI如何驅動預測性維護、質量檢測和數字孿生')}</p></div>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('AI制造正在改变什么','AI is Transforming Manufacturing','AI正在改變製造')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('AI制造正在改变什么','AI is Transforming Manufacturing','AI正在改變製造')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>{L('AI正在推动第四次工业革命的深入。预测性维护系统通过分析设备振动、温度等传感器数据，提前数周预警故障，减少停机时间30-50%；AI视觉质检以99.9%的准确率替代人工目检；数字孪生技术在虚拟环境中模拟和优化整个工厂运作。中国制造业AI应用全球领先，海尔卡奥斯和树根互联等工业互联网平台已连接数百万台设备。据McKinsey，AI可为全球制造业增加1.4万亿美元价值。','AI正在推動第四次工業革命的深入。預測性維護系統通過分析設備振動、溫度等感測器數據，提前數周預警故障，減少停機時間30-50%；AI視覺質檢以99.9%的準確率替代人工目檢；數字孿生技術在虛擬環境中模擬和優化整個工廠運作。中国製造業AI應用全球領先。據McKinsey，AI可為全球製造業增加1.4兆美元價值。','AI is driving the fourth industrial revolution. Predictive maintenance analyzes vibration, temperature and sensor data to warn of failures weeks in advance, reducing downtime by 30-50%; AI visual inspection replaces human QC with 99.9% accuracy; digital twins simulate and optimize entire factories in virtual environments. China leads globally in manufacturing AI adoption. McKinsey estimates AI can add $1.4T in value to global manufacturing.')}</p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'🔊',t:L('预测性维护','Predictive Maintenance','預測性維護'),d:L('AI分析振动、超声波和电流信号，在设备故障前发出预警。Augury的AI系统将工厂意外停机减少70%。C3 AI为壳牌部署的预测维护方案每年节省数千万美元。中国天泽智云服务三一重工等客户，实现从被动维修到主动预测的转变。','AI analyzes vibration, ultrasound and current signals to predict equipment failure. Augury reduces unplanned downtime by 70%. C3 AI saves Shell millions annually. Chinese CyberInsight serves SANY and others, shifting from reactive to predictive maintenance.','AI分析振動、超聲波和電流信號，在設備故障前發出預警。Augury的AI系統將工廠意外停機減少70%。')},
@@ -27,8 +27,8 @@ export default function ManufacturingOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[{v:'↓30-50%',l:L('意外停机减少','Downtime Reduction','意外停機減少')},{v:'99.9%',l:L('AI质检准确率','AI QC Accuracy','AI質檢準確率')},{v:'$1.4T',l:L('AI制造业价值(McKinsey)','AI Mfg Value (McKinsey)','AI製造業價值')},{v:'10×',l:L('供应链响应速度提升','Supply Chain Speed','供應鏈回應速度')}].map(m => (<div key={m.l} style={{textAlign:'center',padding:'16px 12px',background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><div style={{fontSize:24,fontWeight:800,color:'var(--primary)'}}>{m.v}</div><div style={{fontSize:12,color:'var(--text-secondary)',marginTop:4}}>{m.l}</div></div>))}
         </div>

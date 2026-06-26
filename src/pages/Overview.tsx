@@ -25,7 +25,7 @@ export default function Overview() {
       <div className={styles.summary}>{t.overview.summary}</div>
 
       <section className={styles.chart} style={{marginBottom:24}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>AI在物流的核心突破</h3>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>AI在物流的核心突破</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:12}}>
           {[
             {icon:'🏭',t:'智能仓储',d:'计算机视觉+AMR机器人实现货到人拣选，运营成本降低20%。中科富创的物流大模型将煤炭物流园实现全程无人化，运能从200万跃升至近500万吨。'},

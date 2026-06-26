@@ -13,8 +13,8 @@ export default function HealthcareOverview() {
         <p className={styles.subtitle}>{L('How AI is reshaping diagnosis, drug discovery, and patient care','AI如何重塑诊断、药物研发和患者护理','AI如何重塑診斷、藥物研發和患者護理')}</p>
       </div>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('AI医疗正在改变什么','AI is Transforming Healthcare','AI正在改變醫療')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('AI医疗正在改变什么','AI is Transforming Healthcare','AI正在改變醫療')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>
           {L(
             'AI在医疗领域的应用已经从辅助工具升级为核心生产力。医学影像AI可以秒级识别脑卒中和肺栓塞，准确率超过90%；AI药物发现将新药研发周期从10年缩短至2-3年；临床决策支持系统帮助医生减少误诊；患者监护AI实现24小时无间断生命体征监测。据麦肯锡预测，AI每年可为全球医疗行业创造3500亿美元价值。',
@@ -24,8 +24,8 @@ export default function HealthcareOverview() {
         </p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'🧠',t:L('AI医学影像','AI Medical Imaging','AI醫學影像'),d:L('深度学习模型分析CT/MRI/X光图像，秒级检出病灶。FDA已批准超500个AI医疗设备，Aidoc的脑卒中检测将诊断时间缩短52%。','Deep learning models analyze CT/MRI/X-ray images for instant lesion detection. FDA has approved 500+ AI medical devices. Aidoc reduces stroke diagnosis time by 52%.','深度學習模型分析CT/MRI/X光圖像，秒級檢出病灶。FDA已批准超500個AI醫療設備。')},
@@ -41,8 +41,8 @@ export default function HealthcareOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[
             {v:'500+',l:L('FDA批准AI医疗设备','FDA-Approved AI Devices','FDA批准AI醫療設備')},
