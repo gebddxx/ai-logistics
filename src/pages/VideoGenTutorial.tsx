@@ -1,5 +1,6 @@
 import { useT } from '../contexts/LanguageContext'
 import styles from './Page.module.css'
+import { pStyle, ulStyle, Card, Code } from '../components/TutorialCard'
 
 export default function VideoGenTutorial() {
   const { lang } = useT()
@@ -16,7 +17,6 @@ export default function VideoGenTutorial() {
     tips: lang === 'zh-CN' ? '进阶技巧' : lang === 'zh-TW' ? '進階技巧' : 'Pro Tips',
     links: lang === 'zh-CN' ? '资源链接' : lang === 'zh-TW' ? '資源連結' : 'Resources',
   }
-import { pStyle, ulStyle, Card, Code } from '../components/TutorialCard'
 
   return (
     <div className={styles.page}>
@@ -133,10 +133,4 @@ const CODE = {
 # All done without a camera crew. Time: ~2 hours.`,
 }
 
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
-  return <div style={{ background: 'var(--bg-card)', borderRadius: 12, padding: 22, boxShadow: 'var(--shadow)', marginBottom: 16 }}><h3 style={{ marginBottom: 12, color: 'var(--text)', fontSize: 16 }}>{title}</h3>{children}</div>
-}
 
-function Code({ children }: { children: string }) {
-  return <pre style={{ background: '#0f172a', color: '#e2e8f0', borderRadius: 8, padding: 16, fontSize: 13, lineHeight: 1.6, overflowX: 'auto', whiteSpace: 'pre-wrap', wordBreak: 'break-word', margin: 0 }}><code>{children}</code></pre>
-}
