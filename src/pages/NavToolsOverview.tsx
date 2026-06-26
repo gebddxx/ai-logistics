@@ -8,7 +8,6 @@ import AudioGenOverview from './AudioGenOverview'
 import DesignOverview from './DesignOverview'
 import Game3DOverview from './Game3DOverview'
 import OfficeOverview from './OfficeOverview'
-import AgentOverview from './AgentOverview'
 import DevToolsOverview from './DevToolsOverview'
 import SocialMediaOverview from './SocialMediaOverview'
 import ImageResourcesOverview from './ImageResourcesOverview'
@@ -24,7 +23,6 @@ const sections = [
   { key: 'design', icon: '🎯', title: { en: 'Design & UI', 'zh-CN': '设计工具', 'zh-TW': '設計工具' }, desc: { en: 'UI/UX, branding, prototyping tools', 'zh-CN': 'UI/UX、品牌设计、原型工具', 'zh-TW': 'UI/UX、品牌設計、原型工具' }, Component: DesignOverview },
   { key: '3d-game', icon: '🎮', title: { en: '3D & Gaming', 'zh-CN': '3D与游戏', 'zh-TW': '3D與遊戲' }, desc: { en: '3D modeling, game assets, NPC AI', 'zh-CN': '3D建模、游戏资产、NPC AI', 'zh-TW': '3D建模、遊戲資產、NPC AI' }, Component: Game3DOverview },
   { key: 'office', icon: '📋', title: { en: 'Office & Productivity', 'zh-CN': '办公提效', 'zh-TW': '辦公提效' }, desc: { en: 'PPT, docs, meetings, email, translation', 'zh-CN': 'PPT、文档、会议、邮件、翻译', 'zh-TW': 'PPT、文檔、會議、郵件、翻譯' }, Component: OfficeOverview },
-  { key: 'agents', icon: '🤖', title: { en: 'Agents & Automation', 'zh-CN': '智能体', 'zh-TW': '智能體' }, desc: { en: 'AI agent frameworks, assistants, workflows', 'zh-CN': 'AI智能体框架、助手、工作流', 'zh-TW': 'AI智能體框架、助手、工作流' }, Component: AgentOverview },
   { key: 'dev-tools', icon: '🔧', title: { en: 'Dev Tools', 'zh-CN': '开发工具', 'zh-TW': '開發工具' }, desc: { en: 'Online compilers, formatters, converters', 'zh-CN': '在线编译、格式化、编码转换等实用工具', 'zh-TW': '在線編譯、格式化、編碼轉換等實用工具' }, Component: DevToolsOverview },
   { key: 'social-media', icon: '📱', title: { en: 'Social & Community', 'zh-CN': '社区媒体', 'zh-TW': '社群媒體' }, desc: { en: 'Social networks, content platforms, forums, video sites', 'zh-CN': '社交平台、内容社区、论坛、视频网站', 'zh-TW': '社群平台、內容社群、論壇、影片網站' }, Component: SocialMediaOverview },
   { key: 'image-resources', icon: '🖼️', title: { en: 'Image Resources', 'zh-CN': '图片专区', 'zh-TW': '圖片專區' }, desc: { en: 'Free stock photos, color tools, editors, AI cutout, logos', 'zh-CN': '免费图库、配色、在线修图、AI抠图、Logo设计', 'zh-TW': '免費圖庫、配色、在線修圖、AI摳圖、Logo設計' }, Component: ImageResourcesOverview },
@@ -51,10 +49,12 @@ export default function NavToolsOverview() {
           {L('Tool Directory', '导航工具集', '導航工具集')}
         </h2>
         <p style={{ fontSize: 14, opacity: 0.85, margin: '0 0 20px', maxWidth: 600, lineHeight: 1.6 }}>
+          <span style={{ fontWeight:600 }}>⚠️ {L('Not all AI — just a convenient tool collection.','非AI专属，仅为方便整理的普通工具合集。','非AI專屬，僅為方便整理的普通工具合集。')}</span>
+          <br />
           {L(
-            '300+ curated tools across 13 categories. Scroll through all sections continuously, or use the sidebar to jump directly.',
-            '300+精选工具，覆盖10大分类。向下滚动连续浏览所有内容，或用侧边栏快速跳转。',
-            '200+精選工具，覆蓋7大分類。向下滾動連續瀏覽所有內容，或用側邊欄快速跳轉。'
+            '300+ tools across 12 categories. Scroll continuously or use the sidebar to jump.',
+            '300+工具，12大分类。向下滚动连续浏览，或用侧边栏快速跳转。',
+            '300+工具，12大分類。向下滾動連續瀏覽，或用側邊欄快速跳轉。'
           )}
         </p>
         {/* Category tags */}
