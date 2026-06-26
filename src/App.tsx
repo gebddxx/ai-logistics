@@ -135,51 +135,17 @@ function AppContent() {
     setActivePage('overview')
   }
 
-  const NAV_TOOLS_PAGES: Record<string, React.ReactNode> = {
-    overview: <NavToolsOverview  />,
-    search: <SearchOverview />,
-    chat: <ChatOverview />,
-    creative: <CreativeOverview />,
-    design: <DesignOverview />,
-    '3d-game': <Game3DOverview />,
-    office: <OfficeOverview />,
-    agents: <AgentOverview />,
-  }
-
-  const INDUSTRIES_PAGES: Record<string, React.ReactNode> = {
-    overview: <IndustriesOverview  />,
-    logistics: <Overview />,
-    healthcare: <HealthcareOverview />,
-    finance: <FinanceOverview />,
-    education: <EducationOverview />,
-    manufacturing: <ManufacturingOverview />,
-    agriculture: <AgricultureOverview />,
-    enterprise: <EnterpriseOverview />,
-  }
-
-  const AIGC_PAGES: Record<string, React.ReactNode> = {
-    overview: <AigcOverview  />,
-    gemini: <GeminiTutorial />,
-    codex: <CodexTutorial />,
-    ccswitch: <CCSwitchTutorial />,
-    frameworks: <AgentFrameworks />,
-    assistants: <AgentAssistants />,
-    workflow: <AgentWorkflow />,
-    'multi-agent': <AgentMultiAgent />,
-    'audio-gen': <AudioGenTutorial />,
-    'video-gen': <VideoGenTutorial />,
-    novel: <NovelWritingTutorial />,
-    'ppt-gen': <PptGenTutorial />,
-    'web-gen': <WebGenTutorial />,
-    'app-gen': <AppGenTutorial />,
-    'software-gen': <SoftwareGenTutorial />,
+  const handleSelectPage = (key: string) => {
+    setActivePage(key)
+    const el = document.getElementById(`section-${key}`)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const renderPage = () => {
     if (domain === null) return <Home onEnter={handleEnterDomain} />
-    if (domain === 'nav-tools') return NAV_TOOLS_PAGES[activePage] ?? <NavToolsOverview  />
-    if (domain === 'ai-industries') return INDUSTRIES_PAGES[activePage] ?? <IndustriesOverview  />
-    if (domain === 'aigc') return AIGC_PAGES[activePage] ?? <AigcOverview  />
+    if (domain === 'nav-tools') return <NavToolsOverview />
+    if (domain === 'ai-industries') return <IndustriesOverview />
+    if (domain === 'aigc') return <AigcOverview />
     return null
   }
 
@@ -189,7 +155,7 @@ function AppContent() {
     <div className={styles.app}>
       <Header onBack={domain ? handleBack : undefined} />
       <div className={styles.body}>
-        <Sidebar domain={domain} activePage={activePage}  onSelectDomain={handleEnterDomain} />
+        <Sidebar domain={domain} activePage={activePage} onSelectPage={handleSelectPage} onSelectDomain={handleEnterDomain} />
         <div className={styles.handle} onMouseDown={onMouseDown} />
         <main className={styles.content}>
           <BreadcrumbBlock domain={domain} activePage={activePage} onBack={handleBack}  />
