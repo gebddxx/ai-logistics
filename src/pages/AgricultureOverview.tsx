@@ -10,13 +10,13 @@ export default function AgricultureOverview() {
     <div className={styles.page}>
       <div className={styles.head}><h2 className={styles.title}>🌾 {L('AI in Agriculture','AI 智慧农业','AI 智慧農業')}</h2><p className={styles.subtitle}>{L('How AI enables precision farming, crop monitoring, and automated harvesting','AI如何实现精准农业、作物监测和自动收割','AI如何實現精準農業、作物監測和自動收割')}</p></div>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('AI农业正在改变什么','AI is Transforming Agriculture','AI正在改變農業')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('AI农业正在改变什么','AI is Transforming Agriculture','AI正在改變農業')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>{L('全球人口预计2050年达100亿，粮食产量需提升70%——AI是实现这一目标的关键。精准农业用AI+无人机识别每平方米的作物健康，将除草剂用量减少90%；AI卫星图像分析让全球粮食产量预测精确到县级；自动驾驶拖拉机24小时作业，效率是人工的5倍。中国作为农业大国，大疆农业无人机累计作业超20亿亩，极飞科技服务超500万农户。','全球人口預計2050年達100億，糧食產量需提升70%——AI是實現這一目標的關鍵。精準農業用AI+無人機識別每平方米的作物健康，將除草劑用量減少90%；AI衛星圖像分析讓全球糧食產量預測精確到縣級；自動駕駛拖拉機24小時作業，效率是人工的5倍。中国作為農業大國，大疆農業無人機累計作業超20億畝。','Global population is projected to reach 10B by 2050 — food production must increase 70%. AI is key. Precision agriculture uses AI+drones to monitor crop health per square meter, reducing herbicide use by 90%; AI satellite imagery enables county-level yield forecasts globally; autonomous tractors operate 24/7 at 5x human efficiency. China leads in agri-drones: DJI Agriculture has covered 2B+ mu, XAG serves 5M+ farmers.')}</p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'🚜',t:L('精准农业','Precision Farming','精準農業'),d:L('GPS+AI实现厘米级精准播种、施肥和喷药。John Deere的See & Spray系统用计算机视觉识别杂草并精准喷洒，除草剂节省90%。Carbon Robotics的激光除草机器人每小时处理20万株杂草。','GPS+AI enables centimeter-level precision in seeding, fertilizing and spraying. John Deere See & Spray uses CV to identify weeds for targeted spraying, saving 90% herbicide. Carbon Robotics LaserWeeder handles 200K weeds/hour.','GPS+AI實現釐米級精準播種、施肥和噴藥。John Deere See & Spray系統節省90%除草劑。Carbon Robotics雷射除草機器人每小時處理20萬株雜草。')},
@@ -27,8 +27,8 @@ export default function AgricultureOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[{v:'↓90%',l:L('除草剂用量减少','Herbicide Reduction','除草劑用量減少')},{v:'20亿亩+',l:L('大疆农业无人机累计作业','DJI Agri Coverage','大疆農業無人機作業')},{v:'200K/h',l:L('激光除草速度','Laser Weeding Speed','雷射除草速度')},{v:'5×',l:L('自动驾驶农机vs人工','Autonomous vs Manual','自動駕駛vs人工')}].map(m => (<div key={m.l} style={{textAlign:'center',padding:'16px 12px',background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><div style={{fontSize:24,fontWeight:800,color:'var(--primary)'}}>{m.v}</div><div style={{fontSize:12,color:'var(--text-secondary)',marginTop:4}}>{m.l}</div></div>))}
         </div>

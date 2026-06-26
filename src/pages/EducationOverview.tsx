@@ -10,13 +10,13 @@ export default function EducationOverview() {
     <div className={styles.page}>
       <div className={styles.head}><h2 className={styles.title}>📚 {L('AI in Education','AI 教育科技','AI 教育科技')}</h2><p className={styles.subtitle}>{L('How AI is personalizing learning, automating grading, and empowering teachers','AI如何实现个性化学习、自动评分和教师赋能','AI如何實現個性化學習、自動評分和教師賦能')}</p></div>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('AI教育正在改变什么','AI is Transforming Education','AI正在改變教育')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('AI教育正在改变什么','AI is Transforming Education','AI正在改變教育')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>{L('AI正在从根本上改变教育的方式。自适应学习系统可以为每个学生动态生成个性化学习路径，因材施教不再是口号；AI自动批改将老师从重复劳动中解放，Gradescope批改效率是人工的15倍；AI辅导老师24小时在线答疑，教育公平在技术推动下成为现实。中国AI教育市场年增速超30%，猿辅导和学而思的数亿用户正在使用AI个性化学习。','AI正在從根本上改變教育的方式。自適應學習系統可以為每個學生動態生成個性化學習路徑，因材施教不再是口號；AI自動批改將老師從重複勞動中解放；AI輔導老師24小時在線答疑，教育公平在技術推動下成為現實。中國AI教育市場年增速超30%。','AI is fundamentally transforming education. Adaptive learning systems dynamically generate personalized paths for each student; AI auto-grading frees teachers from repetitive work — Gradescope is 15x more efficient than manual grading; AI tutors provide 24/7 support, making educational equity a reality. China\'s AI education market grows 30%+ annually, with Yuanfudao and TAL\'s hundreds of millions of users benefiting from AI personalization.')}</p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'🧑‍🏫',t:L('AI个性化学习','Personalized Learning','AI個性化學習'),d:L('知识图谱+AI分析每个学生的薄弱点，推送针对性练习。Khanmigo用苏格拉底式对话引导学生思考而非直接给答案。松鼠AI覆盖3000+细分知识点，数千万学员个性化路径。','Knowledge graphs + AI identify each student\'s weaknesses and push targeted practice. Khanmigo uses Socratic dialogue to guide thinking. Squirrel AI covers 3000+ knowledge points with personalized paths for millions.','知識圖譜+AI分析每個學生的薄弱點，推送針對性練習。Khanmigo用蘇格拉底式對話引導學生思考。')},
@@ -27,8 +27,8 @@ export default function EducationOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[{v:'15×',l:L('AI批改vs人工效率','AI vs Manual Grading','AI vs 人工效率')},{v:'+200%',l:L('AI辅导语言学习留存提升','Language Retention Boost','語言學習留存提升')},{v:'30%+',l:L('中国AI教育年增速','China AI Edu Growth','中國AI教育年增速')},{v:'10h/周',l:L('AI为教师节省时间','Teacher Time Saved','教師時間節省')}].map(m => (<div key={m.l} style={{textAlign:'center',padding:'16px 12px',background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><div style={{fontSize:24,fontWeight:800,color:'var(--primary)'}}>{m.v}</div><div style={{fontSize:12,color:'var(--text-secondary)',marginTop:4}}>{m.l}</div></div>))}
         </div>

@@ -10,13 +10,13 @@ export default function EnterpriseOverview() {
     <div className={styles.page}>
       <div className={styles.head}><h2 className={styles.title}>🏢 {L('AI in Enterprise','AI 企业应用','AI 企業應用')}</h2><p className={styles.subtitle}>{L('How AI transforms marketing, HR, legal, and enterprise operations','AI如何变革营销、人力资源、法务和企业运营','AI如何變革行銷、人力資源、法務和企業運營')}</p></div>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('AI企业应用正在改变什么','AI is Transforming Enterprise','AI正在改變企業')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('AI企业应用正在改变什么','AI is Transforming Enterprise','AI正在改變企業')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>{L('AI正在重塑企业的每一个职能部门。营销领域，AI驱动的个性化推荐将转化率提升3-5倍；HR方面，AI招聘筛选将简历筛选时间从数十小时压缩到分钟级；法务领域，AI合同审查以95%准确率替代人工初筛，效率提升20倍。Salesforce Einstein每天处理超过1000亿次AI预测，HubSpot AI帮助数百万企业实现营销自动化。中国企业如纷享销客、北森、法大大等也在各自的领域用AI推动企业数字化转型。','AI正在重塑企業的每一個職能部門。行銷領域，AI驅動的個性化推薦將轉換率提升3-5倍；HR方面，AI招聘篩選將履歷篩選時間從數十小時壓縮到分鐘級；法務領域，AI合同審查以95%準確率替代人工初篩，效率提升20倍。Salesforce Einstein每天處理超過1000億次AI預測。','AI is reshaping every corporate function. In marketing, AI-driven personalization boosts conversion rates 3-5x; in HR, AI recruitment screening compresses resume review from hours to minutes; in legal, AI contract review replaces manual screening with 95% accuracy, 20x faster. Salesforce Einstein processes 100B+ AI predictions daily. Chinese leaders like Fxiaoke, Beisen and Fadada are driving enterprise AI transformation.')}</p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'📢',t:L('AI营销自动化','Marketing Automation','AI行銷自動化'),d:L('AI分析客户行为，自动生成个性化内容和投放策略。HubSpot AI的线索评分将销售转化提升40%。Jasper AI帮助企业统一品牌语调，批量生成营销内容。纷享销客和销售易在中国CRM市场以AI驱动销售全流程。','AI analyzes customer behavior, auto-generates personalized content and targeting. HubSpot AI lead scoring boosts conversion 40%. Jasper unifies brand voice at scale. Fxiaoke and Xiaoshouyi lead China CRM with AI-driven sales.','AI分析客戶行為，自動生成個性化內容和投放策略。HubSpot AI的線索評分將銷售轉化提升40%。')},
@@ -27,8 +27,8 @@ export default function EnterpriseOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:"4px solid var(--primary)",paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:"var(--text)",marginBottom:12,paddingBottom:10,borderBottom:"2px solid var(--border)"}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:"var(--border)",margin:"36px 0 20px"}} /><h3 style={{fontSize:17,fontWeight:700,color:"var(--text)",marginBottom:16,display:"flex",alignItems:"center",gap:8}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[{v:'3-5×',l:L('AI推荐转化率提升','Conversion Boost','AI推薦轉換率提升')},{v:'20×',l:L('AI合同审查vs人工','AI vs Manual Review','AI合同vs人工')},{v:'100B/天',l:L('Salesforce AI预测量','Salesforce AI Predictions','Salesforce AI預測')},{v:'10h→min',l:L('简历筛选时间缩短','Resume Screening Time','履歷篩選時間')}].map(m => (<div key={m.l} style={{textAlign:'center',padding:'16px 12px',background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><div style={{fontSize:24,fontWeight:800,color:'var(--primary)'}}>{m.v}</div><div style={{fontSize:12,color:'var(--text-secondary)',marginTop:4}}>{m.l}</div></div>))}
         </div>

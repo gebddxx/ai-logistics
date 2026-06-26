@@ -10,13 +10,13 @@ export default function FinanceOverview() {
     <div className={styles.page}>
       <div className={styles.head}><h2 className={styles.title}>💰 {L('AI in Finance','AI 金融科技','AI 金融科技')}</h2><p className={styles.subtitle}>{L('How AI is transforming fraud detection, trading, risk, and wealth management','AI如何变革反欺诈、算法交易、风险管理和智能理财','AI如何變革反欺詐、算法交易、風險管理和智能理財')}</p></div>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:'4px solid var(--primary)',paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12,paddingBottom:10,borderBottom:'2px solid var(--border)'}}>{L('AI金融正在改变什么','AI is Transforming Finance','AI正在改變金融')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:'var(--border)',margin:'36px 0 20px'}} /><h3 style={{fontSize:17,fontWeight:700,color:'var(--text)',marginBottom:16,display:'flex',alignItems:'center',gap:8}}>{L('AI金融正在改变什么','AI is Transforming Finance','AI正在改變金融')}</h3>
         <p style={{color:'var(--text-secondary)',lineHeight:1.8,fontSize:14,marginBottom:12}}>{L('金融是AI应用最成熟的行业之一。AI反欺诈系统每秒分析数万笔交易，将误报率降低70%；算法交易已占据美股70%以上交易量；AI信贷审批将放款时间从数天压缩到秒级；智能投顾管理资产规模突破万亿美元。据德勤报告，到2027年AI将为全球金融业增加1.2万亿美元价值。','金融是AI應用最成熟的行業之一。AI反欺詐系統每秒分析數萬筆交易，將誤報率降低70%；演算法交易已佔據美股70%以上交易量；AI信貸審批將放款時間從數天壓縮到秒級；智能投顧管理資產規模突破萬億美元。據德勤報告，到2027年AI將為全球金融業增加1.2兆美元價值。','Finance is one of AI\'s most mature verticals. AI fraud detection analyzes tens of thousands of transactions per second, reducing false positives by 70%; algorithmic trading accounts for 70%+ of US stock volume; AI credit approval compresses lending from days to seconds; robo-advisors manage over $1T in assets. Deloitte projects AI will add $1.2T in value to global finance by 2027.')}</p>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:'4px solid var(--primary)',paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12,paddingBottom:10,borderBottom:'2px solid var(--border)'}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:'var(--border)',margin:'36px 0 20px'}} /><h3 style={{fontSize:17,fontWeight:700,color:'var(--text)',marginBottom:16,display:'flex',alignItems:'center',gap:8}}>{L('前沿应用场景','Cutting-Edge Applications','前沿應用場景')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:12}}>
           {[
             {icon:'🛡️',t:L('智能反欺诈','Fraud Detection','智能反欺詐'),d:L('AI实时分析交易行为模式，毫秒级识别异常。Feedzai每天处理超8000亿美元交易，DataVisor用无监督学习发现未知欺诈模式。中国银联AI系统年拦截欺诈交易超千亿。','AI analyzes transaction patterns in real-time, flagging anomalies in milliseconds. Feedzai processes $800B+ daily. China UnionPay AI blocks over ¥100B in fraudulent transactions annually.','AI即時分析交易行為模式，毫秒級識別異常。Feedzai每天處理超8000億美元交易。')},
@@ -27,8 +27,8 @@ export default function FinanceOverview() {
         </div>
       </section>
 
-      <section className={styles.chart} style={{marginBottom:28,borderLeft:'4px solid var(--primary)',paddingLeft:20}}>
-        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12,paddingBottom:10,borderBottom:'2px solid var(--border)'}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
+      <section className={styles.chart} style={{marginBottom:20}}>
+        <div style={{height:1,background:'var(--border)',margin:'36px 0 20px'}} /><h3 style={{fontSize:17,fontWeight:700,color:'var(--text)',marginBottom:16,display:'flex',alignItems:'center',gap:8}}>{L('关键数据','Key Metrics','關鍵數據')}</h3>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))',gap:10}}>
           {[{v:'↓70%',l:L('欺诈误报率降低','False Positive Reduction','欺詐誤報率降低')},{v:'70%+',l:L('美股AI交易占比','US Stock AI Trading Share','美股AI交易佔比')},{v:'秒级',l:L('AI信贷审批速度','AI Loan Approval Speed','AI信貸審批速度')},{v:'$1.2T',l:L('2027年AI金融价值(德勤)','2027 AI Finance Value (Deloitte)','2027年AI金融價值')}].map(m => (<div key={m.l} style={{textAlign:'center',padding:'16px 12px',background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><div style={{fontSize:24,fontWeight:800,color:'var(--primary)'}}>{m.v}</div><div style={{fontSize:12,color:'var(--text-secondary)',marginTop:4}}>{m.l}</div></div>))}
         </div>
