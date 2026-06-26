@@ -60,11 +60,11 @@ export default function AigcOverview() {
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {sections.map(s => (
-            <a key={s.key} href={`#section-${s.key}`} style={{
+            <span key={s.key} onClick={() => { const el = document.getElementById(`section-${s.key}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }} style={{ cursor: 'pointer',
               background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '4px 12px', borderRadius: 16, fontSize: 13, textDecoration: 'none', fontWeight: 500,
             }}>
               {s.icon} {s.title[lang as 'en' | 'zh-CN' | 'zh-TW']}
-            </a>
+            </span>
           ))}
         </div>
       </div>
