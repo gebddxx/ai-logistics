@@ -33,8 +33,9 @@ const sections = [
 export default function AigcOverview() {
   return (
     <div>
-      {sections.map(({ key, Component }) => (
+      {sections.map(({ key, Component }, i) => (
         <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+          {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
           <Component />
         </div>
       ))}
