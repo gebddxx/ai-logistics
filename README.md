@@ -162,6 +162,3 @@ main.tsx
 
 **无 URL Router**，两个 state（`domain` + `activePage`）驱动一切。
 
-## 📄 License
-
-MIT
