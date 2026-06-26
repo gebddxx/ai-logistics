@@ -111,19 +111,56 @@ src/
     └── *Tutorial.tsx          # 14 个教程页
 ```
 
-## 🧩 路由逻辑
+## 🧩 调用链路
 
-无 URL Router，纯状态驱动：
+```
+main.tsx
+  └─ App (ThemeProvider → LanguageProvider → AppContent)
+       │                            ↑
+       │  两个核心 state:           │  变化途径:
+       │    domain: string|null     │   ① 首页点卡片 → handleEnterDomain(key)
+       │    activePage: string      │   ② 侧边栏点子项 → handleSelectPage(key)
+       │                            │   ③ 滚动 → IntersectionObserver
+       │                            │   ④ 点 logo → handleBack()
+       │
+       ├─ Header          ← 📦logo onClick → handleBack()
+       │
+       ├─ Sidebar         ← 手风琴导航 + 滚动自动高亮
+       │   ├─ 🏠 首页      → onHome() → setDomain(null)
+       │   ├─ 🧭 导航工具集 → onSelectDomain('nav-tools')
+       │   │   ├─ 总览     → scrollTo #section-overview
+       │   │   ├─ 搜索引擎 → scrollTo #section-search
+       │   │   └─ ...
+       │   ├─ 🏭 AI行业   → onSelectDomain('ai-industries')
+       │   └─ 🤖 AIGC    → onSelectDomain('aigc')
+       │
+       └─ renderPage()    ← 根据 (domain, activePage) 决定渲染
+            │
+            ├─ null → <Home />
+            │          └─ Hero横幅 + 统计 + 轮播 + 3张导航卡片
+            │               └─ onClick → onEnter('nav-tools'|'ai-industries'|'aigc')
+            │
+            ├─ 'nav-tools' → <NavToolsOverview />
+            │                 ├─ 总览横幅 + 分类标签（点击 scrollIntoView）
+            │                 └─ 内联 7 子页:
+            │                      Search/Chat/Creative/Design/Game3D/Office/Agent
+            │                        └─ 每页 → <LinkNav links={...} /> 连续网格
+            │
+            ├─ 'ai-industries' → <IndustriesOverview />
+            │                     ├─ 总览横幅 + 15 行业标签
+            │                     └─ 内联 15 行业页:
+            │                          每个 = 行业分析 + 4 场景卡片 + 指标 + 工具目录
+            │
+            ├─ 'aigc' → <AigcOverview />
+            │            ├─ 总览横幅 + 14 教程标签
+            │            └─ 内联 14 教程页:
+            │                 每个 = 工具表 + 直达链接 + Card/Code 教程
+            │
+            └─ 'ai-news' → <AiNews />
+                             └─ 20 期快讯卡片 + 加载更多
+```
 
-| domain 值 | 渲染 |
-|:---|:---|
-| `null` | Home（首页） |
-| `'nav-tools'` | NavToolsOverview → 7 个子页内联渲染 |
-| `'ai-industries'` | IndustriesOverview → 15 个行业内联渲染 |
-| `'aigc'` | AigcOverview → 14 个教程内联渲染 |
-| `'ai-news'` | AiNews（独立页） |
-
-侧边栏点击 → `scrollIntoView` 平滑跳转；滚动 → `IntersectionObserver` 自动高亮对应子目录。
+**无 URL Router**，两个 state（`domain` + `activePage`）驱动一切。
 
 ## 📄 License
 
