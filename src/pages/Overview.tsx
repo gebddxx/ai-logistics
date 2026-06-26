@@ -24,6 +24,23 @@ export default function Overview() {
 
       <div className={styles.summary}>{t.overview.summary}</div>
 
+      <section className={styles.chart} style={{marginBottom:24}}>
+        <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>AI在物流的核心突破</h3>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:12}}>
+          {[
+            {icon:'🏭',t:'智能仓储',d:'计算机视觉+AMR机器人实现货到人拣选，运营成本降低20%。中科富创的物流大模型将煤炭物流园实现全程无人化，运能从200万跃升至近500万吨。'},
+            {icon:'🚛',t:'运输调度',d:'AI实时结合路况规划最优路线，卡车装载率从90%提升至97%，燃油成本降低15%。多点帮助香港连锁超市每天减少10+趟车次。'},
+            {icon:'📊',t:'预测决策',d:'生成式AI分析销售历史+市场趋势+天气数据，预测准确率提升40%，缺货率降低35%-45%。极兔速递的AI模型能提前3-5天识别风险运单。'},
+            {icon:'🤖',t:'运营客服',d:'NLP+RPA实现智能录单和客服。牛卡福AI日处理3000单、准确率99.99%（人工仅200单/天、92%）。韵达"小达"客服机器人7×24小时在线。'},
+          ].map(item => (
+            <div key={item.t} style={{padding:14,background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}>
+              <h4 style={{fontSize:15,fontWeight:600,color:'var(--text)',margin:'0 0 4px'}}>{item.icon} {item.t}</h4>
+              <p style={{fontSize:13,color:'var(--text-secondary)',lineHeight:1.7,margin:0}}>{item.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <div className={styles.stats}>
         {t.overviewStats.map((s: { label: string; value: string; sub: string }) => (
           <StatCard key={s.label} label={s.label} value={s.value} sub={s.sub} />
