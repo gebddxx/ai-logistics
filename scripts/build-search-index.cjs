@@ -168,6 +168,38 @@ function main() {
     entries.push(`  { name:'${name}', keywords:['${kw.join("','")}'], domain:'${domain}', section:'${key}' },`)
   }
 
+  // Section keywords — applied to all tools within each section
+  const sectionKeywords = {
+    'social-media': ['社交','社区','媒体','论坛','短视频','视频','平台','抖音','B站','shequ','meiti'],
+    'image-resources': ['图片','图库','抠图','配色','修图','Logo','tupian','tuku','koutu','peise'],
+    'dev-tools': ['开发','编程','编译器','JSON','编码','计算','计算器','汇率','房贷','个税','BMI','日期','年龄','孕期','油耗','kaifa','biancheng','jisuanqi'],
+    'search': ['搜索','搜索引擎','百度','谷歌','sousuo','search'],
+    'chat': ['对话','聊天','大模型','GPT','Claude','AI助手','duihua'],
+    'writing': ['写作','文案','小说','ai写作','写文章','xiezuo','AI写作','AI写'],
+    'image-gen': ['绘画','画图','生图','图片生成','huihua','AI绘画','AI画图'],
+    'video-gen-tool': ['视频','视频生成','视频编辑','shipin','短视频'],
+    'audio-gen-tool': ['音频','音乐','配音','语音','声音','yinpin','yinyue','AI音乐','AI配音'],
+    'design': ['设计','UI','Logo','品牌','原型','sheji'],
+    '3d-game': ['3D','游戏','3D建模','游戏资产','NPC','三维'],
+    'office': ['办公','PPT','文档','会议','邮件','翻译','数据','bangong'],
+    'agents': ['智能体','Agent','机器人','自动化','zhinengti','AI'],
+    'logistics': ['物流','仓储','运输','配送','wuliu'],
+    'healthcare': ['医疗','健康','医院','诊断','药物','yiliao'],
+    'finance': ['金融','理财','投资','银行','反欺诈','交易','jinrong'],
+    'education': ['教育','学习','辅导','批改','jiaoyu','xuexi'],
+    'manufacturing': ['制造','工厂','质检','维护','zhizao'],
+    'agriculture': ['农业','种植','收割','农','nongye'],
+    'enterprise': ['企业','营销','HR','法务','qiye'],
+    'retail': ['零售','电商','购物','推荐','lingshou'],
+    'transport': ['交通','出行','自动驾驶','无人车','jiaotong'],
+    'energy': ['能源','电力','电网','光伏','风电','nengyuan'],
+    'media': ['媒体','娱乐','游戏','影视','音乐','yule'],
+    'security': ['安全','网络','威胁','防火墙','anquan'],
+    'law': ['法律','法务','合同','律师','falu','falv'],
+    'climate': ['环保','气候','碳','排放','huanbao'],
+    'govtech': ['政务','智慧城市','政府','城市','zhengwu'],
+  }
+
   // Process each file for tool-level entries
   let totalTools = 0
   for (const file of files) {
@@ -186,8 +218,13 @@ function main() {
       seen.add(name)
 
       const desc = descs.find(d => d.includes(name.substring(0, 2))) || descs[i] || ''
-      const keywords = extractKeywords(name, [desc]).filter(k => k.length > 0).slice(0, 8)
-      entries.push(`  { name:'${name.replace(/'/g, "\\'")}', keywords:[${keywords.map(k => `'${k.replace(/'/g, "\\'")}'`).join(',')}], domain:'${domain}', section:'${section}' },`)
+      const keywords = extractKeywords(name, [desc]).filter(k => k.length > 0)
+      // Add section-level keywords
+      if (sectionKeywords[section]) {
+        keywords.push(...sectionKeywords[section])
+      }
+      const uniqueKw = [...new Set(keywords)].slice(0, 16)
+      entries.push(`  { name:'${name.replace(/'/g, "\\'")}', keywords:[${uniqueKw.map(k => `'${k.replace(/'/g, "\\'")}'`).join(',')}], domain:'${domain}', section:'${section}' },`)
       totalTools++
     }
   }
