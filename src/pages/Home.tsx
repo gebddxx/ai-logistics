@@ -1,6 +1,7 @@
 import { useT } from '../contexts/LanguageContext'
 import { domains } from '../data/domains'
 import type { Lang } from '../i18n/translations'
+import NewsTicker from '../components/NewsTicker'
 import styles from './Page.module.css'
 
 const statusLabels: Record<string, Record<Lang, string>> = {
@@ -30,6 +31,8 @@ export default function Home({ onEnter }: Props) {
             ? '三大板塊：🧭 導航工具集 — 精選200+實用網站，搜索/對話/設計/創意/辦公/3D/智能體一站式查找；🏭 AI行業應用 — 看AI如何落地8大行業，每個行業都有真實案例和工具推薦；🤖 AIGC教學 — 手把手教你生成音頻、影片、小說、PPT、網頁、App和軟體。'
             : 'Three sections: 🧭 Tool Directory — 200+ curated websites across search, chat, design, creative, office, 3D, and AI agents; 🏭 AI in Industries — see how AI is transforming 8 major industries with real cases and tool recommendations; 🤖 AIGC Tutorials — step-by-step guides for generating audio, video, novels, PPTs, web pages, apps, and software.'}
       </div>
+
+      <NewsTicker />
 
       <div className={styles.domainGrid}>
         {domains.map(d => (
