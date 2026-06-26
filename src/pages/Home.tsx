@@ -32,7 +32,7 @@ export default function Home({ onEnter }: Props) {
             : 'Three sections: 🧭 Tool Directory — 200+ curated websites across search, chat, design, creative, office, 3D, and AI agents; 🏭 AI in Industries — see how AI is transforming 8 major industries with real cases and tool recommendations; 🤖 AIGC Tutorials — step-by-step guides for generating audio, video, novels, PPTs, web pages, apps, and software.'}
       </div>
 
-      <NewsTicker />
+      <NewsTicker onNews={() => onEnter('ai-news')} />
 
       <div className={styles.domainGrid}>
         {domains.map(d => (

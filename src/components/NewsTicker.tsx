@@ -63,7 +63,7 @@ function getMessages(lang: string): string[] {
   ]
 }
 
-export default function NewsTicker() {
+export default function NewsTicker({ onNews }: { onNews?: () => void }) {
   const { lang } = useT()
   const [idx, setIdx] = useState(0)
   const [leaving, setLeaving] = useState(false)
@@ -121,6 +121,24 @@ export default function NewsTicker() {
       }}>
         {idx + 1}/{messages.length}
       </span>
+      {onNews && (
+        <span onClick={onNews} style={{
+          fontSize: 12,
+          color: '#fff',
+          background: 'rgba(255,255,255,0.2)',
+          padding: '3px 10px',
+          borderRadius: 12,
+          marginLeft: 10,
+          cursor: 'pointer',
+          fontWeight: 600,
+          whiteSpace: 'nowrap',
+          transition: 'background .15s',
+          flexShrink: 0,
+        }}
+        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.35)' }}
+        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.2)' }}
+        >📰 速报 →</span>
+      )}
     </div>
   )
 }
