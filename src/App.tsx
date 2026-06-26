@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import NavToolsOverview from './pages/NavToolsOverview'
 import IndustriesOverview from './pages/IndustriesOverview'
 import AigcOverview from './pages/AigcOverview'
+import AiDevOverview from './pages/AiDevOverview'
 import AiNews from './pages/AiNews'
 
 import { domains } from './data/domains'
@@ -160,6 +161,7 @@ function AppContent() {
     if (domain === 'nav-tools') return <NavToolsOverview />
     if (domain === 'ai-industries') return <IndustriesOverview />
     if (domain === 'aigc') return <AigcOverview />
+    if (domain === 'ai-dev') return <AiDevOverview />
     if (domain === 'ai-news') return <AiNews />
     return null
   }
