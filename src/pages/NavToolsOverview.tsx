@@ -25,7 +25,7 @@ export default function NavToolsOverview() {
   return (
     <div>
       {/* Overview Intro */}
-      <div style={{
+      <div id="section-overview" style={{
         background: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)',
         borderRadius: 14,
         padding: '28px 32px',

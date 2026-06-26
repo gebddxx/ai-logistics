@@ -38,7 +38,7 @@ export default function AigcOverview() {
   return (
     <div>
       {/* Overview Intro */}
-      <div style={{
+      <div id="section-overview" style={{
         background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%)',
         borderRadius: 14,
         padding: '28px 32px',
