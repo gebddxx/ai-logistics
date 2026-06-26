@@ -32,13 +32,41 @@ function getFavicon(url: string) {
 export default function LinkNav({ links, lang, color }: Props) {
   const accent = color || 'var(--primary)'
 
+  // group links by category for subtle dividers
+  const grouped: { cat: string; items: ToolLink[] }[] = []
+  let lastCat = ''
+  links.forEach(l => {
+    if (l.cat !== lastCat) {
+      grouped.push({ cat: l.cat, items: [l] })
+      lastCat = l.cat
+    } else {
+      grouped[grouped.length - 1].items.push(l)
+    }
+  })
+
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-      gap: 8,
-    }}>
-      {links.map(l => (
+    <div>
+      {grouped.map((group, gi) => (
+        <div key={group.cat}>
+          {/* subtle category divider — only if more than 1 group */}
+          {grouped.length > 1 && (
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 10,
+              margin: gi === 0 ? '0 0 12px' : '24px 0 12px',
+            }}>
+              <span style={{ fontSize: 12, fontWeight: 600, color: accent, whiteSpace: 'nowrap', textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                {group.cat}
+              </span>
+              <div style={{ flex: 1, height: 1, background: accent + '30' }} />
+            </div>
+          )}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
+            gap: 8,
+            marginBottom: gi < grouped.length - 1 ? 0 : 0,
+          }}>
+            {group.items.map(l => (
         <a
           key={l.name}
           href={l.url}
@@ -87,6 +115,9 @@ export default function LinkNav({ links, lang, color }: Props) {
           </span>
           <span style={{ color: 'var(--text-muted)', fontSize: 14, flexShrink: 0 }}>↗</span>
         </a>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   )
