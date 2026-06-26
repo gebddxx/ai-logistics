@@ -187,7 +187,7 @@ export const t: Record<Lang, Record<string, T>> = {
       operation: '运营客服',
     },
     overview: {
-      title: 'AI物流 · 全景总览',
+      title: '物流 · 全景总览',
       subtitle: '五大核心场景',
       summary: 'AI已深入物流链条各个环节——从智能仓储到最后一公里配送，五大场景正在重塑整个行业。以下是各环节关键指标汇总。',
       pieTitle: 'AI投入效能分布',
@@ -353,7 +353,7 @@ export const t: Record<Lang, Record<string, T>> = {
       operation: '運營客服',
     },
     overview: {
-      title: 'AI物流 · 全景總覽',
+      title: '物流 · 全景總覽',
       subtitle: '五大核心場景',
       summary: 'AI已深入物流鏈條各個環節——從智慧倉儲到最後一公里配送，五大場景正在重塑整個行業。以下是各環節關鍵指標彙總。',
       pieTitle: 'AI投入效能分佈',
