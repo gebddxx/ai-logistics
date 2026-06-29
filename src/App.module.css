@@ -23,6 +23,7 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   --active-bg: #eff6ff;
   --active-border: #2563eb;
+  --code-bg: #0f172a;
 }
 
 [data-theme='dark'] {
@@ -43,6 +44,7 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --active-bg: #1e3a5f;
   --active-border: #60a5fa;
+  --code-bg: #020617;
 }
 
 .app {

@@ -1,0 +1,10 @@
+{
+  "name": "AI Navigator",
+  "short_name": "AI Nav",
+  "description": "AI工具导航 · 行业应用 · AIGC教程",
+  "start_url": "/ai-for-everything/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": []
+}

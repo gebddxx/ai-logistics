@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "vite build",
+    "predeploy": "npm run build-index && vite build",
     "deploy": "gh-pages -d dist",
     "build-index": "node scripts/build-search-index.cjs"
   },

@@ -23,7 +23,7 @@ export function Code({ children }: { children: string }) {
   return (
     <div style={{ position: 'relative' }}>
       <pre style={{
-        background: '#0f172a', color: '#e2e8f0', borderRadius: 8, padding: 16,
+        background: 'var(--code-bg, #0f172a)', color: '#e2e8f0', borderRadius: 8, padding: 16,
         fontSize: 13, lineHeight: 1.6, overflowX: 'auto',
         whiteSpace: 'pre-wrap', wordBreak: 'break-word', margin: 0,
         maxHeight: open ? 'none' : `${COLLAPSE_LINES * 21}px`, overflowY: 'hidden',
@@ -33,7 +33,7 @@ export function Code({ children }: { children: string }) {
       {isLong && (
         <button onClick={() => setOpen(!open)} style={{
           position: 'absolute', bottom: 0, left: 0, right: 0,
-          background: open ? 'transparent' : 'linear-gradient(transparent, #0f172a 60%)',
+          background: open ? 'transparent' : 'linear-gradient(transparent, var(--code-bg, #0f172a) 60%)',
           border: 'none', color: '#60a5fa', cursor: 'pointer',
           padding: open ? '4px 0 0' : '32px 0 8px',
           fontSize: 12, fontWeight: 600, width: '100%', textAlign: 'center',
