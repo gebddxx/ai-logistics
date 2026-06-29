@@ -11,6 +11,7 @@ import IndustriesOverview from './pages/IndustriesOverview'
 import AigcOverview from './pages/AigcOverview'
 import AiDevOverview from './pages/AiDevOverview'
 import AiNews from './pages/AiNews'
+import BackToTop from './components/BackToTop'
 
 import { domains } from './data/domains'
 import type { Lang } from './i18n/translations'
@@ -179,6 +180,7 @@ function AppContent() {
           {renderPage()}
         </main>
       </div>
+      <BackToTop />
     </div>
   )
 }
