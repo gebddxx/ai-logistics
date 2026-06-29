@@ -109,7 +109,6 @@ export const domains: Domain[] = [
       { key: 'overview', icon: '🛠️', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
       { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini CLI', 'zh-TW': 'Gemini CLI' } },
       { key: 'codex', icon: '🟢', title: { en: 'Codex CLI', 'zh-CN': 'Codex CLI', 'zh-TW': 'Codex CLI' } },
-      { key: 'ccswitch', icon: '🔀', title: { en: 'CCSwitch', 'zh-CN': 'CCSwitch', 'zh-TW': 'CCSwitch' } },
       { key: 'frameworks', icon: '🧰', title: { en: 'Agent Frameworks', 'zh-CN': 'Agent框架', 'zh-TW': 'Agent框架' } },
       { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' } },
       { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' } },

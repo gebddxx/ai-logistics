@@ -1,7 +1,6 @@
 import { useT } from '../contexts/LanguageContext'
 import GeminiTutorial from './GeminiTutorial'
 import CodexTutorial from './CodexTutorial'
-import CCSwitchTutorial from './CCSwitchTutorial'
 import AgentFrameworks from './AgentFrameworks'
 import AgentAssistants from './AgentAssistants'
 import AgentWorkflow from './AgentWorkflow'
@@ -11,7 +10,6 @@ import AgentToolsOverview from './AgentToolsOverview'
 const sections = [
   { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini CLI', 'zh-TW': 'Gemini CLI' }, Component: GeminiTutorial },
   { key: 'codex', icon: '🟢', title: { en: 'Codex CLI', 'zh-CN': 'Codex CLI', 'zh-TW': 'Codex CLI' }, Component: CodexTutorial },
-  { key: 'ccswitch', icon: '🔀', title: { en: 'CCSwitch', 'zh-CN': 'CCSwitch', 'zh-TW': 'CCSwitch' }, Component: CCSwitchTutorial },
   { key: 'frameworks', icon: '🧰', title: { en: 'Agent Frameworks', 'zh-CN': 'Agent框架', 'zh-TW': 'Agent框架' }, Component: AgentFrameworks },
   { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' }, Component: AgentAssistants },
   { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' }, Component: AgentWorkflow },
