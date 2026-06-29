@@ -32,7 +32,7 @@ export default function EnterpriseOverview() {
     </div>
     <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',marginBottom:12}}>💼 {L('AI × Enterprise','AI × 企业','AI × 企業')}</h3>
     <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:10,marginBottom:24}}>
-      {cards.map(c=>(<div key={c.t} style={{padding:14,background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><h4 style={{fontSize:15,fontWeight:600,color:'var(--text)',margin:'0 0 10px'}}>{c.icon} {c.t}</h4><div style={{display:'flex',flexDirection:'column',gap:6}}>{c.items.map((item,i)=>(<a key={i} href={c.urls[i]} target='_blank' rel='noopener' style={{fontSize:13,color:'var(--primary)',lineHeight:1.5,textDecoration:'none'}}>{item} ↗</a>))}</div></div>))}
+      {cards.map(c=>(<div key={c.t} style={{padding:14,background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}><h4 style={{fontSize:15,fontWeight:600,color:'var(--text)',margin:'0 0 10px'}}>{c.icon} {c.t}</h4><div style={{display:'flex',flexDirection:'column',gap:6}}>{c.items.map((item,i)=>{const d=c.urls[i]?new URL(c.urls[i]).hostname.replace('www.',''):'';return(<a key={i} href={c.urls[i]} target='_blank' rel='noopener' style={{fontSize:13,color:'var(--primary)',lineHeight:1.5,textDecoration:'none'}}>{item} <span style={{fontSize:10,color:'var(--text-muted)',fontWeight:400}}>({d})</span> ↗</a>)})}</div></div>))}
     </div>
     <h3 style={{fontSize:16,fontWeight:700,color:'var(--text)',margin:'28px 0 12px',paddingBottom:8,borderBottom:'2px solid var(--border)'}}>🔗 {L('Tools','工具导航','工具導航')}</h3>
     <LinkNav links={links} lang={lang as 'en'|'zh-CN'|'zh-TW'} color="#64748b" />
