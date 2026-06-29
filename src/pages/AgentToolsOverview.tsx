@@ -6,54 +6,27 @@ export default function AgentToolsOverview() {
   const { lang } = useT()
   const L = (e: string, z: string, t: string) => lang === 'zh-CN' ? z : lang === 'zh-TW' ? t : e
   return (<div className={styles.page}>
-    <div className={styles.head}><h2 className={styles.title}>🤖 {L('AI Agents Directory','AI 智能体目录','AI 智能體目錄')}</h2><p className={styles.subtitle}>{L('Platforms · Autonomous · Coding · Enterprise · Multi-Agent · Vertical','对话平台 · 自主执行 · 编程 · 企业 · 多Agent · 垂直领域','對話平台 · 自主執行 · 程式設計 · 企業 · 多Agent · 垂直領域')}</p></div>
+    <div className={styles.head}><h2 className={styles.title}>🤖 {L('AI Models','主流大模型','主流大模型')}</h2><p className={styles.subtitle}>{L('Major LLMs & AI models worldwide','国内外主流大语言模型一览','國內外主流大語言模型一覽')}</p></div>
     <LinkNav links={links} lang={lang as 'en'|'zh-CN'|'zh-TW'} color="#6366f1" />
   </div>)
 }
 
 const links: ToolLink[] = [
-  // 对话平台
-  {name:'ChatGPT',url:'https://chat.openai.com/',desc:{en:'OpenAI · GPT-4.1 · tasks · web browsing',zh:'OpenAI · GPT-4.1 · 定时任务'},cat:'对话平台',icon:'⚫'},
-  {name:'Claude',url:'https://claude.ai/',desc:{en:'Anthropic · 200K context · Computer Use',zh:'Anthropic · 200K上下文'},cat:'对话平台',icon:'🟠'},
-  {name:'Gemini',url:'https://gemini.google.com/',desc:{en:'Google · 1M context · Deep Research',zh:'谷歌 · 100万上下文'},cat:'对话平台',icon:'🔵'},
-  {name:'DeepSeek',url:'https://chat.deepseek.com/',desc:{en:'DeepThink R1 · 1M ctx · cost-effective',zh:'DeepThink推理 · 高性价比'},cat:'对话平台',icon:'🐋'},
-  {name:'Kimi',url:'https://kimi.moonshot.cn/',desc:{en:'Moonshot · 2M Chinese chars',zh:'月之暗面 · 200万字中文'},cat:'对话平台',icon:'🌙'},
-  {name:'豆包',url:'https://www.doubao.com/',desc:{en:'ByteDance · fast · free · multi-modal',zh:'字节跳动 · 多模态 · 免费'},cat:'对话平台',icon:'👧'},
-  {name:'Grok',url:'https://x.com/i/grok',desc:{en:'xAI · real-time X/Twitter data',zh:'马斯克xAI · 实时X数据'},cat:'对话平台',icon:'❌'},
-  // 自主执行
-  {name:'Manus',url:'https://manus.im/',desc:{en:'Prompt → auto execution · multi-step',zh:'提示词→自动执行 · 多步骤'},cat:'自主执行',icon:'🤖'},
-  {name:'OpenClaw',url:'https://github.com/openclaw/openclaw',desc:{en:'Open-source · browser ops · file access',zh:'开源 · 浏览器操控 · 文件操作'},cat:'自主执行',icon:'🦞'},
-  {name:'AutoGPT',url:'https://github.com/Significant-Gravitas/AutoGPT',desc:{en:'Autonomous agent pioneer · web+files',zh:'自主Agent先驱 · 联网+文件'},cat:'自主执行',icon:'🤖'},
-  {name:'AgentGPT',url:'https://agentgpt.reworkd.ai/',desc:{en:'Browser AutoGPT · no-code deploy',zh:'浏览器AutoGPT · 零代码'},cat:'自主执行',icon:'🧠'},
-  {name:'SuperAGI',url:'https://superagi.com/',desc:{en:'Open-source · tools marketplace',zh:'开源 · 工具市场'},cat:'自主执行',icon:'🦸'},
-  {name:'Devin',url:'https://www.cognition.ai/',desc:{en:'1st AI software engineer agent',zh:'首个AI软件工程师'},cat:'自主执行',icon:'🧑‍💻'},
-  // AI编程
-  {name:'Cursor Agent',url:'https://cursor.com/',desc:{en:'AI IDE · agent mode · multi-file',zh:'AI IDE · Agent模式'},cat:'AI编程',icon:'🖱️'},
-  {name:'Copilot',url:'https://github.com/features/copilot',desc:{en:'GitHub AI · agent chat · code gen',zh:'GitHub AI结对编程'},cat:'AI编程',icon:'🐙'},
-  {name:'Claude Code',url:'https://docs.anthropic.com/en/docs/claude-code',desc:{en:'Terminal agent · reads+edits codebase',zh:'终端Agent · 读写代码库'},cat:'AI编程',icon:'💻'},
-  {name:'Windsurf',url:'https://codeium.com/windsurf',desc:{en:'AI IDE · Cascade · multi-file flow',zh:'AI IDE · Cascade流式编辑'},cat:'AI编程',icon:'🌊'},
-  {name:'Replit Agent',url:'https://replit.com/',desc:{en:'Browser IDE · prototype→deploy',zh:'浏览器IDE · 部署'},cat:'AI编程',icon:'🔄'},
-  {name:'Bolt.new',url:'https://bolt.new/',desc:{en:'StackBlitz · prompt→fullstack',zh:'StackBlitz · 全栈应用'},cat:'AI编程',icon:'⚡'},
-  {name:'Lovable',url:'https://lovable.dev/',desc:{en:'GPT Engineer · desc→SaaS app',zh:'GPT工程师 · SaaS应用'},cat:'AI编程',icon:'❤️'},
-  {name:'v0.dev',url:'https://v0.dev/',desc:{en:'Vercel · text→React UI',zh:'Vercel · React组件'},cat:'AI编程',icon:'🟢'},
-  // 企业平台
-  {name:'Coze 扣子',url:'https://www.coze.cn/',desc:{en:'ByteDance bot builder · enterprise',zh:'字节零代码Bot搭建'},cat:'企业平台',icon:'🤖'},
-  {name:'Dify',url:'https://dify.ai/',desc:{en:'LLM app · RAG+Agent+workflow',zh:'LLM应用 · RAG+Agent'},cat:'企业平台',icon:'🔮'},
-  {name:'钉钉 Agent',url:'https://www.dingtalk.com/',desc:{en:'DingTalk AI workspace · agent builder',zh:'钉钉AI工作平台'},cat:'企业平台',icon:'💙'},
-  {name:'飞书伙伴',url:'https://www.feishu.cn/',desc:{en:'Feishu · docs+meeting automation',zh:'飞书 · 文档会议自动化'},cat:'企业平台',icon:'🐦'},
-  {name:'Salesforce',url:'https://www.salesforce.com/',desc:{en:'Agentforce · CRM AI · 24/7',zh:'CRM AI智能体 · 7×24'},cat:'企业平台',icon:'☁️'},
-  {name:'MS Copilot',url:'https://copilot.microsoft.com/',desc:{en:'Office 365 AI · Word/Excel/PPT',zh:'Office 365 · 全办公套件'},cat:'企业平台',icon:'🪟'},
-  {name:'Amazon Q',url:'https://aws.amazon.com/q/',desc:{en:'AWS agent · code+infra+BI',zh:'AWS · 代码+基础设施'},cat:'企业平台',icon:'☁️'},
-  // 多Agent框架
-  {name:'CrewAI',url:'https://www.crewai.com/',desc:{en:'Role-based multi-agent orchestration',zh:'角色化多Agent编排'},cat:'多Agent',icon:'👥'},
-  {name:'LangGraph',url:'https://www.langchain.com/langgraph',desc:{en:'LangChain · stateful workflow graph',zh:'LangChain · 状态工作流图'},cat:'多Agent',icon:'🦜'},
-  {name:'AutoGen',url:'https://microsoft.github.io/autogen/',desc:{en:'Microsoft · multi-agent conversation',zh:'微软 · 多Agent对话框架'},cat:'多Agent',icon:'🪟'},
-  {name:'MetaGPT',url:'https://github.com/geekan/MetaGPT',desc:{en:'Software company simulation agents',zh:'模拟软件公司 · 角色协作'},cat:'多Agent',icon:'🏢'},
-  {name:'Swarm',url:'https://github.com/openai/swarm',desc:{en:'OpenAI · lightweight orchestration',zh:'OpenAI · 轻量多Agent编排'},cat:'多Agent',icon:'🕸️'},
-  {name:'n8n',url:'https://n8n.io/',desc:{en:'Workflow automation · AI nodes',zh:'工作流自动化 · AI节点'},cat:'多Agent',icon:'⚡'},
-  // 垂直领域
-  {name:'Perplexity',url:'https://www.perplexity.ai/',desc:{en:'AI search agent · real-time citations',zh:'AI搜索 · 实时引用'},cat:'垂直领域',icon:'🔍'},
-  {name:'Harvey AI',url:'https://www.harvey.ai/',desc:{en:'Legal agent · contract review',zh:'法律 · 合同审查'},cat:'垂直领域',icon:'⚖️'},
-  {name:'Adept',url:'https://www.adept.ai/',desc:{en:'Operate any software interface',zh:'操控任意软件界面'},cat:'垂直领域',icon:'🖥️'},
-  {name:'NVIDIA Agent',url:'https://www.nvidia.com/',desc:{en:'Enterprise-grade · agent framework',zh:'企业级 · Agent框架'},cat:'垂直领域',icon:'🟢'},
+  {name:'GPT-4.1 / ChatGPT',url:'https://chat.openai.com/',desc:{en:'OpenAI · multimodal · top general capability',zh:'OpenAI · 多模态 · 综合能力最强'},cat:'海外',icon:'⚫'},
+  {name:'Claude 4',url:'https://claude.ai/',desc:{en:'Anthropic · 200K context · deep reasoning',zh:'Anthropic · 200K上下文 · 深度推理'},cat:'海外',icon:'🟠'},
+  {name:'Gemini 2.5',url:'https://gemini.google.com/',desc:{en:'Google · 1M context · multi-modal native',zh:'谷歌 · 100万上下文 · 原生多模态'},cat:'海外',icon:'🔵'},
+  {name:'Grok 3',url:'https://x.com/i/grok',desc:{en:'xAI (Musk) · real-time X data · witty',zh:'马斯克xAI · 实时X数据 · 幽默风格'},cat:'海外',icon:'❌'},
+  {name:'Llama 4',url:'https://www.llama.com/',desc:{en:'Meta · open-source · community ecosystem',zh:'Meta · 开源 · 社区生态最丰富'},cat:'海外',icon:'🦙'},
+  {name:'Mistral',url:'https://mistral.ai/',desc:{en:'France · efficient · multilingual · open',zh:'法国 · 轻量高效 · 多语言 · 开源'},cat:'海外',icon:'🌬️'},
+  {name:'DeepSeek V3/R1',url:'https://chat.deepseek.com/',desc:{en:'深度求索 · 1M ctx · DeepThink · 性价比之王',zh:'深度求索 · 1M上下文 · 推理强 · 极致性价比'},cat:'国产',icon:'🐋'},
+  {name:'Qwen 通义千问',url:'https://tongyi.aliyun.com/',desc:{en:'Alibaba · strong Chinese · multi-modal',zh:'阿里 · 中文强 · 多模态 · 开源家族'},cat:'国产',icon:'☁️'},
+  {name:'豆包 / 字节',url:'https://www.doubao.com/',desc:{en:'ByteDance · fast · free · massive user base',zh:'字节跳动 · 速度快 · 免费 · 亿级用户'},cat:'国产',icon:'👧'},
+  {name:'Kimi',url:'https://kimi.moonshot.cn/',desc:{en:'Moonshot · 2M Chinese chars · long-doc king',zh:'月之暗面 · 200万字 · 长文档之王'},cat:'国产',icon:'🌙'},
+  {name:'文心一言 / ERNIE',url:'https://yiyan.baidu.com/',desc:{en:'Baidu · deep Chinese knowledge · search eco',zh:'百度 · 中文知识深厚 · 搜索生态'},cat:'国产',icon:'💎'},
+  {name:'GLM / 智谱清言',url:'https://chatglm.cn/',desc:{en:'Zhipu AI (Tsinghua) · GLM series · code strong',zh:'清华智谱 · GLM系列 · 编程能力强'},cat:'国产',icon:'🧠'},
+  {name:'混元 / 腾讯元宝',url:'https://yuanbao.tencent.com/',desc:{en:'Tencent · WeChat ecosystem · multi-modal',zh:'腾讯 · 微信生态集成 · 多模态'},cat:'国产',icon:'💬'},
+  {name:'星火 / 讯飞',url:'https://xinghuo.xfyun.cn/',desc:{en:'iFlytek · voice+text · education specialist',zh:'科大讯飞 · 语音+文本 · 教育专长'},cat:'国产',icon:'🔥'},
+  {name:'百川',url:'https://www.baichuan-ai.com/',desc:{en:'Baichuan · medical/legal vertical models',zh:'百川智能 · 医疗/法律垂直模型'},cat:'国产',icon:'💧'},
+  {name:'MiniMax / 海螺',url:'https://hailuoai.com/',desc:{en:'MiniMax · voice+music generation strong',zh:'MiniMax · 语音合成+音乐生成突出'},cat:'国产',icon:'🐚'},
+  {name:'Step / 阶跃星辰',url:'https://www.stepfun.com/',desc:{en:'StepFun · multi-modal · trillion params',zh:'阶跃星辰 · 多模态 · 万亿参数'},cat:'国产',icon:'⭐'},
 ]

@@ -14,7 +14,7 @@ const sections = [
   { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' }, Component: AgentAssistants },
   { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' }, Component: AgentWorkflow },
   { key: 'multi-agent', icon: '🕸️', title: { en: 'Multi-Agent', 'zh-CN': '多Agent', 'zh-TW': '多Agent' }, Component: AgentMultiAgent },
-  { key: 'agent-tools', icon: '🤖', title: { en: 'Agent Directory', 'zh-CN': '智能体目录', 'zh-TW': '智能體目錄' }, Component: AgentToolsOverview },
+  { key: 'agent-tools', icon: '🤖', title: { en: 'AI Models', 'zh-CN': '主流大模型', 'zh-TW': '主流大模型' }, Component: AgentToolsOverview },
 ]
 
 export default function AiDevOverview() {
