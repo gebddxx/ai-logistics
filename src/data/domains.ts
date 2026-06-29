@@ -74,7 +74,7 @@ export const domains: Domain[] = [
   },
   {
     key: 'aigc',
-    title: { en: 'AIGC · Content Generation', 'zh-CN': 'AIGC · AI生成', 'zh-TW': 'AIGC · AI生成' },
+    title: { en: 'AIGC · Content Gen', 'zh-CN': 'AIGC · AI生成', 'zh-TW': 'AIGC · AI生成' },
     icon: '🤖',
     desc: {
       en: 'Hands-on tutorials for generating audio, video, novels, PPTs, web pages, apps, and software with AI. Step-by-step guides with code and direct tool links.',
@@ -96,24 +96,24 @@ export const domains: Domain[] = [
   },
   {
     key: 'ai-dev',
-    title: { en: 'AI Dev & Agents', 'zh-CN': 'AI开发 · 智能体', 'zh-TW': 'AI開發 · 智能體' },
+    title: { en: 'AI Tools & Models', 'zh-CN': 'AI工具 · 大模型', 'zh-TW': 'AI工具 · 大模型' },
     icon: '🛠️',
     desc: {
-      en: 'AI coding environment setup, CLI tools, agent frameworks, personal assistants, workflow automation, and multi-agent systems.',
-      'zh-CN': 'AI编程环境搭建、CLI工具、智能体框架、个人助手、工作流自动化和多Agent协作系统。',
-      'zh-TW': 'AI編程環境搭建、CLI工具、智能體框架、個人助手、工作流自動化和多Agent協作系統。',
+      en: 'AI coding tools, CLI setup guides, agent frameworks, workflow automation, and major LLM models.',
+      'zh-CN': 'AI编程工具、命令行教程、智能体搭建、工作流自动化、国内外主流大模型一览。',
+      'zh-TW': 'AI編程工具、命令列教學、智能體搭建、工作流自動化、國內外主流大模型一覽。',
     },
     color: '#6366f1',
     status: 'done',
     subModules: [
       { key: 'overview', icon: '🛠️', title: { en: 'Overview', 'zh-CN': '总览', 'zh-TW': '總覽' } },
-      { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini CLI', 'zh-TW': 'Gemini CLI' } },
-      { key: 'codex', icon: '🟢', title: { en: 'Codex CLI', 'zh-CN': 'Codex CLI', 'zh-TW': 'Codex CLI' } },
-      { key: 'frameworks', icon: '🧰', title: { en: 'Agent Frameworks', 'zh-CN': 'Agent框架', 'zh-TW': 'Agent框架' } },
+      { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini 教程', 'zh-TW': 'Gemini 教學' } },
+      { key: 'codex', icon: '🟢', title: { en: 'Codex CLI', 'zh-CN': 'Codex 教程', 'zh-TW': 'Codex 教學' } },
+      { key: 'frameworks', icon: '🧰', title: { en: 'Agent Frameworks', 'zh-CN': '智能体框架', 'zh-TW': '智能體框架' } },
       { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' } },
       { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' } },
-      { key: 'multi-agent', icon: '🕸️', title: { en: 'Multi-Agent', 'zh-CN': '多Agent', 'zh-TW': '多Agent' } },
-      { key: 'agent-tools', icon: '🤖', title: { en: 'AI生态全景', 'zh-CN': '主流大模型', 'zh-TW': '主流大模型' } },
+      { key: 'multi-agent', icon: '🕸️', title: { en: 'Multi-Agent', 'zh-CN': '多Agent协作', 'zh-TW': '多Agent協作' } },
+      { key: 'agent-tools', icon: '🤖', title: { en: 'Model Hub', 'zh-CN': '模型大全', 'zh-TW': '模型大全' } },
     ],
   },
 ]
