@@ -69,6 +69,10 @@ const tables = [
     rows:[
       ['API 集合站','社区','AI API 接口聚合 · 多供应商参考','https://api.daheiai.com/'],
       ['OpenRouter','社区','300+ 模型统一 API · 兼容 OpenAI · 比价切换','https://openrouter.ai/'],
+      ['API2D','社区','国内 OpenAI 兼容中转 · GPT/Claude/DeepSeek','https://api2d.com/'],
+      ['OhMyGPT','社区','国内 API 中转 · 多模型 · 按量计费','https://ohmygpt.com/'],
+      ['AIGC2D','社区','国内 API 中转 · 兼容 OpenAI 格式','https://aigc2d.com/'],
+      ['ChatAnywhere','社区','OpenAI API 国内中转 · 免翻墙 · 免费额度','https://api.chatanywhere.com.cn/'],
       ['RapidAPI','RapidAPI','全球最大API平台 · 4万+接口 · 浏览器测试','https://rapidapi.com/'],
       ['Apifox','Apifox','国产API管理 · Mock+测试+文档一体化','https://apifox.com/'],
       ['DeepSeek API','深度求索','¥2/百万token · 兼容 OpenAI 格式','https://platform.deepseek.com/'],
