@@ -36,12 +36,12 @@ export default function DeepSeekTutorial() {
 }
 
 const CODE = {
-  step1: `# 网页版（免费）
-# 访问: https://chat.deepseek.com/
-# 注册即可使用，支持文件上传、联网搜索
+  step1: `👇 网页版直接使用：https://chat.deepseek.com/
+👇 API 平台注册：https://platform.deepseek.com/ （新用户送 500万 tokens）
+
+# 网页版（免费）— 注册即可用，支持文件上传、联网搜索
 
 # API 接入（超低价）
-# 注册: https://platform.deepseek.com/
 # 新用户赠送 500万 tokens 免费额度
 
 # API 价格（人民币）：
@@ -68,10 +68,12 @@ response = client.chat.completions.create(
 )
 print(response.choices[0].message.content)`,
 
-  step2: `# DeepSeek 本地部署（免费 · 离线 · 隐私）
+  step2: `👇 下载 Ollama：https://ollama.com/
+👇 LM Studio（图形界面）：https://lmstudio.ai/
+
+# DeepSeek 本地部署（免费 · 离线 · 隐私）
 
 # 方式 A：Ollama（推荐，一行命令）
-# 安装 Ollama: https://ollama.com/
 
 # 下载 DeepSeek-R1（7B 蒸馏版，8GB 显存）：
 ollama pull deepseek-r1:7b

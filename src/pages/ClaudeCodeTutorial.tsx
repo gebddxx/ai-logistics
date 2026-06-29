@@ -29,13 +29,15 @@ export default function ClaudeCodeTutorial() {
       <li><a href="https://claude.ai/" target="_blank" rel="noopener">Claude 官网</a></li>
       <li><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Claude Code 官方文档</a></li>
       <li><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">MCP 官方服务器列表</a></li>
-      <li><a href="https://daheiai.com/cc-install.html" target="_blank" rel="noopener">大黑AI Claude Code 安装教程</a></li>
-    </ul></Card>
+          </ul></Card>
   </div></div>)
 }
 
 const CODE = {
-  step1: `# ===== 方式 A：一键安装（推荐） =====
+  step1: `👇 点击链接：https://claude.ai/ （下载安装包）
+👇 API Key 获取：https://console.anthropic.com/
+
+# ===== 方式 A：一键安装（推荐） =====
 # macOS / Linux
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -60,9 +62,10 @@ claude doctor        # 诊断系统配置
 claude update        # 自动更新到最新版
 npm update -g @anthropic-ai/claude-code`,
 
-  step2: `# ===== 方式 1：Anthropic 官方 API（按量计费） =====
-# 获取 Key: https://console.anthropic.com/
-# 注册送 $5 免费额度
+  step2: `👇 获取 API Key：https://console.anthropic.com/ （注册送 $5 额度）
+👇 国内用 Kimi 中转：https://platform.moonshot.cn/
+
+# ===== 方式 1：Anthropic 官方 API（按量计费） =====
 export ANTHROPIC_API_KEY=sk-ant-xxxxx
 
 # 持久化：
@@ -110,7 +113,10 @@ claude "Add TypeScript types to the API responses"
 claude "Find all SQL injection vulnerabilities"
 claude "Write unit tests for src/auth.ts"`,
 
-  step4: `# MCP 扩展 Claude Code 能力
+  step4: `👇 查看所有可用 MCP 服务：https://github.com/modelcontextprotocol/servers
+👇 Brave Search API Key：https://brave.com/search/api/
+
+# MCP 扩展 Claude Code 能力
 # 配置文件位置:
 #   用户级: ~/.claude.json        (所有项目)
 #   项目级: .mcp.json 或 .claude/mcp.json
@@ -190,7 +196,10 @@ claude "Review all changed files in this PR:
   - Type safety problems
   - Suggest improvements"`,
 
-  step6: `# 国内访问 Claude Code 的方案
+  step6: `👇 Kimi API：https://platform.moonshot.cn/
+👇 Kimi 兼容接口文档：https://platform.moonshot.cn/docs
+
+# 国内访问 Claude Code 的方案
 
 # ===== 方案 A：Kimi 兼容 API（推荐） =====
 export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
