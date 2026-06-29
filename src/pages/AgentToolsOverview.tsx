@@ -65,6 +65,19 @@ const tables = [
       ['AutoGen','Microsoft','多Agent对话协作框架','https://microsoft.github.io/autogen/'],
       ['n8n','社区','工作流自动化 · AI节点 · 自托管','https://n8n.io/'],
     ]},
+  { title:{en:'AI API Hub','zh-CN':'🌐 AI API 资源','zh-TW':'🌐 AI API 資源'}, color:'#06b6d4',
+    rows:[
+      ['API 集合站','社区','AI API 接口聚合 · 多供应商参考','https://api.daheiai.com/'],
+      ['OpenRouter','社区','300+ 模型统一 API · 兼容 OpenAI · 比价切换','https://openrouter.ai/'],
+      ['RapidAPI','RapidAPI','全球最大API平台 · 4万+接口 · 浏览器测试','https://rapidapi.com/'],
+      ['Apifox','Apifox','国产API管理 · Mock+测试+文档一体化','https://apifox.com/'],
+      ['DeepSeek API','深度求索','¥2/百万token · 兼容 OpenAI 格式','https://platform.deepseek.com/'],
+      ['Kimi API','月之暗面','200万字上下文 · 兼容 Anthropic 格式','https://platform.moonshot.cn/'],
+      ['通义千问 API','阿里云','256K上下文 · DashScope 平台','https://dashscope.aliyun.com/'],
+      ['文心一言 API','百度','中文最强 · 千帆大模型平台','https://console.bce.baidu.com/qianfan/'],
+      ['Anthropic API','Anthropic','Claude 官方 API · Console 控制台','https://console.anthropic.com/'],
+      ['OpenAI API','OpenAI','GPT-4.1 API · Platform 平台','https://platform.openai.com/'],
+    ]},
 ]
 
 export default function AgentToolsOverview() {
@@ -72,7 +85,7 @@ export default function AgentToolsOverview() {
   const T = (en:string,zh:string,tw:string) => lang==='zh-CN'?zh:lang==='zh-TW'?tw:en
 
   return (<div className={styles.page}>
-    <div className={styles.head}><h2 className={styles.title}>🤖 {T('Model Hub','模型大全','模型大全')}</h2><p className={styles.subtitle}>{T('LLMs · Switchers · Coding · Autonomous Agents','大模型 · 模型切换 · AI编程 · 自主Agent','大模型 · 模型切換 · AI編程 · 自主Agent')}</p></div>
+    <div className={styles.head}><h2 className={styles.title}>🤖 {T('Model Hub','模型大全','模型大全')}</h2><p className={styles.subtitle}>{T('LLMs · Switchers · Coding · Agents · API Hub','大模型 · 模型切换 · AI编程 · Agent · API资源','大模型 · 模型切換 · AI編程 · Agent · API資源')}</p></div>
 
     {tables.map(t => (
       <div key={t.color} style={{ marginBottom: 28 }}>
