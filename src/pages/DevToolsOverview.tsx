@@ -119,4 +119,9 @@ const links: ToolLink[] = [
   {name:'年龄计算器',url:'https://www.jyshare.com/front-end/70/',desc:{en:'Age calculator, precise to days, zodiac sign',zh:'年龄计算器,精确到天,星座生肖'},cat:'计算工具',icon:'🎂',source:'jyshare'},
   {name:'孕期计算器',url:'https://www.jyshare.com/front-end/71/',desc:{en:'Pregnancy calculator, due date, trimester tracker',zh:'孕期计算器,预产期,孕期周数追踪'},cat:'计算工具',icon:'🤰',source:'jyshare'},
   {name:'油耗计算器',url:'https://www.jyshare.com/front-end/72/',desc:{en:'Fuel consumption calculator, km/L, cost per km',zh:'油耗计算器,百公里油耗,每公里费用'},cat:'计算工具',icon:'⛽',source:'jyshare'},
+  // === API 资源 ===
+  {name:'API 集合站',url:'https://api.daheiai.com/',desc:{en:'Curated AI API directory, multi-provider reference',zh:'AI API接口集合,多供应商参考文档'},cat:'API资源',icon:'🔌'},
+  {name:'OpenRouter API',url:'https://openrouter.ai/',desc:{en:'300+ models unified API, price comparison',zh:'300+模型统一API,比价切换,兼容OpenAI格式'},cat:'API资源',icon:'🚦'},
+  {name:'RapidAPI',url:'https://rapidapi.com/',desc:{en:'World largest API hub, 40K+ APIs, test in browser',zh:'全球最大API平台,4万+接口,浏览器测试'},cat:'API资源',icon:'⚡'},
+  {name:'Apifox',url:'https://apifox.com/',desc:{en:'Chinese API management, mock+test+docs all-in-one',zh:'国产API管理工具, Mock+测试+文档一体化'},cat:'API资源',icon:'🦊'},
 ]
