@@ -72,7 +72,7 @@ export default function AgentToolsOverview() {
   const T = (en:string,zh:string,tw:string) => lang==='zh-CN'?zh:lang==='zh-TW'?tw:en
 
   return (<div className={styles.page}>
-    <div className={styles.head}><h2 className={styles.title}>🤖 {T('AI Ecosystem','AI 生态全景','AI 生態全景')}</h2><p className={styles.subtitle}>{T('LLMs · Switchers · Coding · Autonomous Agents','大模型 · 模型切换 · AI编程 · 自主Agent','大模型 · 模型切換 · AI編程 · 自主Agent')}</p></div>
+    <div className={styles.head}><h2 className={styles.title}>🤖 {T('Model Hub','模型大全','模型大全')}</h2><p className={styles.subtitle}>{T('LLMs · Switchers · Coding · Autonomous Agents','大模型 · 模型切换 · AI编程 · 自主Agent','大模型 · 模型切換 · AI編程 · 自主Agent')}</p></div>
 
     {tables.map(t => (
       <div key={t.color} style={{ marginBottom: 28 }}>
