@@ -109,7 +109,7 @@ export default function LinkNav({ links, lang, color }: Props) {
           <span style={{ fontWeight: 600, color: accent, fontSize: 13, minWidth: 80, maxWidth: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {l.name}
           </span>
-          {l.source && <span style={{ fontSize: 9, color: 'var(--text-muted)', background: 'var(--hover-bg)', padding: '1px 5px', borderRadius: 4, flexShrink: 0, fontWeight: 500 }}>{l.source}</span>}
+          {(()=>{const d=l.source||(l.url?new URL(l.url).hostname.replace('www.',''):'');return d?<span style={{fontSize:9,color:'var(--text-muted)',background:'var(--hover-bg)',padding:'1px 5px',borderRadius:4,flexShrink:0,fontWeight:500}}>{d}</span>:null})()}
           <span style={{ color: 'var(--text-secondary)', fontSize: 12, flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {getDesc(l.desc, lang)}
           </span>
