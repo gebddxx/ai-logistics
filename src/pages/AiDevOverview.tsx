@@ -1,6 +1,7 @@
 import { useT } from '../contexts/LanguageContext'
 import GeminiTutorial from './GeminiTutorial'
 import CodexTutorial from './CodexTutorial'
+import DeepSeekTutorial from './DeepSeekTutorial'
 import AgentFrameworks from './AgentFrameworks'
 import AgentAssistants from './AgentAssistants'
 import AgentWorkflow from './AgentWorkflow'
@@ -10,6 +11,7 @@ import AgentToolsOverview from './AgentToolsOverview'
 const sections = [
   { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini 教程', 'zh-TW': 'Gemini 教學' }, Component: GeminiTutorial },
   { key: 'codex', icon: '🟢', title: { en: 'Codex CLI', 'zh-CN': 'Codex 教程', 'zh-TW': 'Codex 教學' }, Component: CodexTutorial },
+  { key: 'deepseek', icon: '🐋', title: { en: 'DeepSeek Guide', 'zh-CN': 'DeepSeek 教程', 'zh-TW': 'DeepSeek 教學' }, Component: DeepSeekTutorial },
   { key: 'frameworks', icon: '🧰', title: { en: 'Agent Frameworks', 'zh-CN': '智能体框架', 'zh-TW': '智能體框架' }, Component: AgentFrameworks },
   { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' }, Component: AgentAssistants },
   { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' }, Component: AgentWorkflow },
