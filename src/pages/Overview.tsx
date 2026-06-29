@@ -67,7 +67,7 @@ export default function Overview() {
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:10}}>
           {[
             {icon:'🗺️',t:'智能路径规划',items:['🚦 实时交通数据 动态路线','📈 机器学习 需求预测+车辆调度','🚛 车辆利用率 ↑25% 空驶率下降']},
-            {icon:'🚗',t:'自动驾驶运输',items:['🛣️ L4级 干线物流自动驾驶','🏙️ 末端配送无人车','📡 5G+边缘计算 远程监控']},
+            {icon:'🚗',t:'自动驾驶运输',items:['🛣️ L4级 干线物流自动驾驶','🚚 图森未来 无人卡车物流','📡 5G+边缘计算 远程监控']},
             {icon:'📡',t:'在途AI监控',items:['🌡️ 温湿度/震动 实时监测','⚠️ 异常自动预警+介入','📊 运输时效预测 94%准确']},
           ].map(c=>(
             <div key={c.t} style={{padding:14,background:'var(--bg-card)',borderRadius:10,border:'1px solid var(--border)'}}>
@@ -150,6 +150,7 @@ export default function Overview() {
           { module:t.overviewHighlights[2]?.module||'末端配送', company:'美团无人机', result:t.overviewHighlights[2]?.result||'深圳完成10万+单', url:'https://www.meituan.com/' },
           { module:t.overviewHighlights[3]?.module||'预测决策', company:'极兔速递', result:t.overviewHighlights[3]?.result||'提前3-5天预警', url:'https://www.jtexpress.com/' },
           { module:t.overviewHighlights[4]?.module||'运营客服', company:'牛卡福', result:t.overviewHighlights[4]?.result||'效率提升15倍', url:'https://www.niukafu.com/' },
+          { module:'自动驾驶', company:'图森未来', result:'L4无人卡车·全球最大自动驾驶物流网络', url:'https://www.tusimple.com/' },
         ].map(h => (
           <a key={h.company} href={h.url} target='_blank' rel='noopener' className={styles.highlightCard} style={{textDecoration:'none'}}>
             <span className={styles.highlightBadge}>{h.module}</span>
