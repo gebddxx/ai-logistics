@@ -8,6 +8,7 @@ import AgentAssistants from './AgentAssistants'
 import AgentWorkflow from './AgentWorkflow'
 import AgentMultiAgent from './AgentMultiAgent'
 import AgentToolsOverview from './AgentToolsOverview'
+import ApiRelayOverview from './ApiRelayOverview'
 
 const sections = [
   { key: 'gemini', icon: '🔷', title: { en: 'Gemini CLI', 'zh-CN': 'Gemini 教程', 'zh-TW': 'Gemini 教學' }, Component: GeminiTutorial },
@@ -18,7 +19,8 @@ const sections = [
   { key: 'assistants', icon: '💬', title: { en: 'AI Assistants', 'zh-CN': '个人助手', 'zh-TW': '個人助手' }, Component: AgentAssistants },
   { key: 'workflow', icon: '⚡', title: { en: 'Workflow', 'zh-CN': '工作流', 'zh-TW': '工作流' }, Component: AgentWorkflow },
   { key: 'multi-agent', icon: '🕸️', title: { en: 'Multi-Agent', 'zh-CN': '多Agent协作', 'zh-TW': '多Agent協作' }, Component: AgentMultiAgent },
-  { key: 'agent-tools', icon: '🤖', title: { en: 'Models & API', 'zh-CN': '大模型 & API', 'zh-TW': '大模型 & API' }, Component: AgentToolsOverview },
+  { key: 'agent-tools', icon: '🤖', title: { en: 'Model Hub', 'zh-CN': '大模型 { key: 'agent-tools', icon: '🤖', title: { en: 'Models & API', 'zh-CN': '大模型 & API', 'zh-TW': '大模型 & API' }, Component: AgentToolsOverview }, API', 'zh-TW': '大模型 { key: 'agent-tools', icon: '🤖', title: { en: 'Models & API', 'zh-CN': '大模型 & API', 'zh-TW': '大模型 & API' }, Component: AgentToolsOverview }, API' }, Component: AgentToolsOverview },
+  { key: 'api-relay', icon: '🔌', title: { en: 'API Relay', 'zh-CN': 'API中转', 'zh-TW': 'API中轉' }, Component: ApiRelayOverview },
 ]
 
 export default function AiDevOverview() {
