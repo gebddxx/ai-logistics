@@ -1,4 +1,4 @@
-// 简→繁映射表
+// Simplified → Traditional Chinese mapping
 const S2T: Record<string, string> = {
   '的':'的','了':'了','是':'是','我':'我','不':'不','人':'人','在':'在','他':'他','有':'有','这':'這',
   '中':'中','大':'大','来':'來','上':'上','国':'國','个':'個','到':'到','说':'說','们':'們','为':'為',
@@ -29,7 +29,7 @@ const S2T: Record<string, string> = {
   '优':'優','测':'測','试':'試','部':'部','署':'署','境':'境','业':'業','丰':'豐','极':'極','飞':'飛',
 }
 
-/** 域名/子模块标题：找不到对应语言时 fallback 到英文 */
+/** Domain/submodule title: fallback to English when lang not found */
 type TitleMap = { en: string; 'zh-CN': string; 'zh-TW': string; ja?: string; ko?: string; es?: string }
 export function domainTitle(t: TitleMap, lang: string): string {
   return (t as any)[lang] || t.en
@@ -46,9 +46,9 @@ export function toTraditional(text: string): string {
 export type MultiLang = string | { en?: string; zh?: string; tw?: string; ja?: string; ko?: string; es?: string }
 
 /**
- * 多语言文本工具
- * - 字符串：简中直接显示，繁中自动转换
- * - 对象：按语言取对应字段，找不到则 fallback 到英文
+ * Multi-language text helper
+ * - String: zh-CN shows original, zh-TW auto-converts to Traditional
+ * - Object: returns exact lang match, falls back to en
  */
 export function tText(text: MultiLang, lang: string): string {
   if (typeof text !== 'string') {

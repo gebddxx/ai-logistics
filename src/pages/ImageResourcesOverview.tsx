@@ -15,7 +15,7 @@ export default function ImageResourcesOverview() {
 }
 
 const links: ToolLink[] = [
-  // 免费图库
+  // Free Stock Photos
   {name:'Pixabay',url:'https://pixabay.com/',desc:{en:'Free stock photos, vectors, illustrations, CC0',zh:'免费高清图片/矢量/插画,CC0可商用'},cat:'免费图库',icon:'🖼️'},
   {name:'Pexels',url:'https://www.pexels.com/',desc:{en:'Free stock photos & videos, high quality, CC0',zh:'免费高清图片+视频,高质量,CC0可商用'},cat:'免费图库',icon:'📷'},
   {name:'Unsplash',url:'https://unsplash.com/',desc:{en:'Beautiful free images, photographer community',zh:'精美免费图片,摄影师社区,可商用'},cat:'免费图库',icon:'🌄'},
@@ -27,20 +27,20 @@ const links: ToolLink[] = [
   {name:'Depositphotos',url:'https://depositphotos.com/',desc:{en:'Premium stock photos, vectors, videos',zh:'高质量付费图库,图片/矢量/视频'},cat:'免费图库',icon:'📸'},
   {name:'Shutterstock',url:'https://www.shutterstock.com/',desc:{en:'World largest stock library, 400M+ images',zh:'全球最大图库,4亿+图片/视频/音乐'},cat:'免费图库',icon:'🏪'},
   {name:'大作',url:'https://www.bigbigwork.com/',desc:{en:'Designer inspiration search, multi-source aggregation',zh:'设计师灵感搜索,多站聚合,免翻墙'},cat:'免费图库',icon:'🎨'},
-  // 国内图库
+  // Chinese Stock Libraries
   {name:'花瓣',url:'https://huaban.com/',desc:{en:'Chinese Pinterest, design inspiration collection',zh:'中国版Pinterest,设计灵感采集'},cat:'免费图库',icon:'🌸'},
   {name:'图虫',url:'https://tuchong.com/',desc:{en:'Photography community, high quality stock photos',zh:'摄影社区+高质量图库,可商用授权'},cat:'免费图库',icon:'📷'},
   {name:'千图网',url:'https://www.58pic.com/',desc:{en:'Design material: templates, vectors, backgrounds',zh:'设计素材:模板/矢量/背景/字体'},cat:'免费图库',icon:'🖌️'},
-  // 图片搜索
+  // Image Search
   {name:'Google 以图搜图',url:'https://images.google.com/',desc:{en:'Reverse image search, find similar images',zh:'以图搜图,找相似图片和来源'},cat:'图片搜索',icon:'🔍'},
   {name:'百度识图',url:'https://image.baidu.com/',desc:{en:'Baidu reverse image search, visual recognition',zh:'百度以图搜图,视觉识别找同款'},cat:'图片搜索',icon:'🐻'},
   {name:'必应视觉搜寻',url:'https://www.bing.com/visualsearch',desc:{en:'Bing visual search, object recognition in images',zh:'必应视觉搜索,图片物体识别'},cat:'图片搜索',icon:'👁️'},
-  // AI 抠图
+  // AI Cutout
   {name:'稿定抠图',url:'https://www.gaoding.com/koutu',desc:{en:'AI cutout, remove background in one click',zh:'AI智能抠图,一键去背景'},cat:'AI抠图',icon:'✂️'},
   {name:'PicWish / 佐糖',url:'https://picwish.com/',desc:{en:'AI cutout + photo enhance, batch processing',zh:'AI抠图+修图,批量处理,老照片修复'},cat:'AI抠图',icon:'✨'},
   {name:'片刻抠图',url:'https://www.pianke.me/',desc:{en:'Quick AI background removal, precise edges',zh:'快速AI抠图,精准边缘处理'},cat:'AI抠图',icon:'🖌️'},
   {name:'Remove.bg',url:'https://www.remove.bg/',desc:{en:'AI background removal, 5 seconds, API available',zh:'AI去背景,5秒完成,提供API'},cat:'AI抠图',icon:'🎯'},
-  // 在线修图
+  // Online Editors
   {name:'在线PS软件',url:'https://www.photopea.com/',desc:{en:'Photopea, free online Photoshop alternative',zh:'免费在线PS,媲美Photoshop功能'},cat:'在线修图',icon:'🖥️'},
   {name:'美图秀秀',url:'https://www.meitu.com/',desc:{en:'Popular photo editor, beauty + filters + collage',zh:'全民修图神器,美颜/滤镜/拼图'},cat:'在线修图',icon:'💄'},
   {name:'Fotor',url:'https://www.fotor.com/',desc:{en:'Online photo editor + design, templates',zh:'在线修图+设计,海量模板'},cat:'在线修图',icon:'🖼️'},
@@ -50,18 +50,18 @@ const links: ToolLink[] = [
   {name:'图司机',url:'https://www.tusij.com/',desc:{en:'Easy graphic design, marketing visuals',zh:'简易平面设计,营销视觉素材'},cat:'在线修图',icon:'🚗'},
   {name:'微词云',url:'https://www.weiciyun.com/',desc:{en:'Word cloud generator, text visualization',zh:'词云生成器,文本可视化工具'},cat:'在线修图',icon:'☁️'},
   {name:'PhotoMosh',url:'https://photomosh.com/',desc:{en:'Glitch art effects, real-time photo distortion',zh:'故障艺术特效,实时照片扭曲效果'},cat:'在线修图',icon:'🌀'},
-  // 配色方案
+  // Color Schemes
   {name:'Coolors',url:'https://coolors.co/',desc:{en:'Color palette generator, space bar to generate',zh:'配色方案生成,按空格键随机生成'},cat:'配色方案',icon:'🎨'},
   {name:'Adobe Color',url:'https://color.adobe.com/',desc:{en:'Color wheel, harmony rules, extract from image',zh:'色轮配色,和谐规则,从图片提取配色'},cat:'配色方案',icon:'🎯'},
   {name:'中国色',url:'https://www.zhongguose.com/',desc:{en:'Traditional Chinese color palette, poetic names',zh:'中国传统色配色卡,诗意色名'},cat:'配色方案',icon:'🏮'},
   {name:'ColorHunt',url:'https://colorhunt.co/',desc:{en:'Curated color palettes, trending + popular',zh:'精选配色方案,热门+流行趋势'},cat:'配色方案',icon:'🌈'},
   {name:'uiGradients',url:'https://uigradients.com/',desc:{en:'Beautiful gradient collection, copy CSS code',zh:'精美渐变集合,一键复制CSS代码'},cat:'配色方案',icon:'🌊'},
-  // Logo 设计
+  // Logo Design
   {name:'Logo设计 (标小智)',url:'https://www.logosc.cn/',desc:{en:'AI logo maker, brand kit generation',zh:'AI智能Logo设计,品牌套件一键生成'},cat:'Logo设计',icon:'🏷️'},
   {name:'Canva Logo',url:'https://www.canva.com/create/logos/',desc:{en:'Free logo maker, thousands of templates',zh:'免费Logo制作,数千模板,拖拽编辑'},cat:'Logo设计',icon:'🎨'},
   {name:'Hatchful (Shopify)',url:'https://hatchful.shopify.com/',desc:{en:'Free logo generator, industry-specific templates',zh:'免费Logo生成,行业专属模板'},cat:'Logo设计',icon:'🛍️'},
   {name:'Looka',url:'https://looka.com/',desc:{en:'AI logo + brand kit: logo, colors, fonts',zh:'AI Logo+品牌套件:配色/字体/名片'},cat:'Logo设计',icon:'👁️'},
-  // 其他图片工具
+  // Other Image Tools
   {name:'iLoveIMG',url:'https://www.iloveimg.com/',desc:{en:'All-in-one: compress, resize, crop, convert',zh:'全能图片:压缩/调整/裁剪/转换格式'},cat:'实用工具',icon:'❤️'},
   {name:'图片转 PDF',url:'https://www.ilovepdf.com/',desc:{en:'Convert images to PDF, merge, split PDFs',zh:'图片转PDF,合并/拆分PDF'},cat:'实用工具',icon:'📄'},
   {name:'SVG 在线制作',url:'https://www.jyshare.com/front-end/63/',desc:{en:'Online SVG editor, vector graphics creation',zh:'在线SVG编辑,矢量图形创作'},cat:'实用工具',icon:'📐',source:'jyshare'},
