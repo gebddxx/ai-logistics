@@ -17,7 +17,7 @@ const LanguageContext = createContext<LangCtx>({
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
     const saved = localStorage.getItem('ai-logistics-lang')
-    return (saved === 'zh-CN' || saved === 'zh-TW' || saved === 'ja' || saved === 'en') ? saved : 'en'
+    return (saved === 'zh-CN' || saved === 'zh-TW' || saved === 'ja' || saved === 'ko' || saved === 'es' || saved === 'en') ? saved : 'en'
   })
 
   useEffect(() => {
