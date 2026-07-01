@@ -8,9 +8,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 
-// Register service worker for PWA
+// Register service worker for PWA (dev: /sw.js, prod: /ai-for-everything/sw.js)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/ai-for-everything/sw.js')
+    navigator.serviceWorker.register(location.pathname.replace(/\/[^/]*$/, '') + '/sw.js')
   })
 }
