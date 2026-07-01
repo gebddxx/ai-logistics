@@ -24,7 +24,7 @@ const sections = [
   { key: 'video-gen-tool', icon: '🎬', title: { en: 'Video Tools', 'zh-CN': 'AI视频工具', 'zh-TW': 'AI影片工具', ja: 'AI動画ツール', ko: 'AI 비디오 도구', es: 'Video IA' }, Component: VideoGenOverview },
   { key: 'audio-gen-tool', icon: '🎵', title: { en: 'Audio Tools', 'zh-CN': 'AI音频工具', 'zh-TW': 'AI音頻工具', ja: 'AI音声ツール', ko: 'AI 오디오 도구', es: 'Audio IA' }, Component: AudioGenOverview },
 ]
-export default function AigcOverview() {
+export default function AigcOverview({ activePage }: { activePage?: string }) {
   const { lang } = useT()
   const L = (a: MultiLang, b?: string, c?: string) => {
     if (typeof a !== 'string') return tText(a, lang)
@@ -42,12 +42,15 @@ export default function AigcOverview() {
           {sections.map(s => (<span key={s.key} onClick={() => { const el = document.getElementById(`section-${s.key}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }} style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '4px 12px', borderRadius: 16, fontSize: 13, cursor: 'pointer', fontWeight: 500 }}>{s.icon} {domainTitle(s.title, lang)}</span>))}
         </div>
       </div>
-      {sections.map(({ key, Component }, i) => (
+        <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+          {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
+          <Component />
+{(activePage === "overview" || !activePage) ?       sections.map(({ key, Component }, i) => (
         <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
           {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
           <Component />
         </div>
-      ))}
+      ))} : sections.filter(s => s.key === activePage).map(({ key, Component }) => <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}><Component /></div>)}
     </div>
   )
 }

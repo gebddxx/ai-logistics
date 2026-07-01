@@ -22,7 +22,7 @@ const sections = [
   { key: 'agent-tools', icon: '🤖', title: { en: 'Models & API', 'zh-CN': '大模型 & API', 'zh-TW': '大模型 & API', ja: '大モデル & API', ko: '대모델 & API', es: 'Modelos' }, Component: AgentToolsOverview },
   { key: 'api-relay', icon: '🔌', title: { en: 'API Relay', 'zh-CN': 'API中转', 'zh-TW': 'API中轉', ja: 'API中継', ko: 'API 중계', es: 'API Relay' }, Component: ApiRelayOverview },
 ]
-export default function AiDevOverview() {
+export default function AiDevOverview({ activePage }: { activePage?: string }) {
   const { lang } = useT()
   const L = (a: MultiLang, b?: string, c?: string) => {
     if (typeof a !== 'string') return tText(a, lang)
@@ -40,12 +40,15 @@ export default function AiDevOverview() {
           {sections.map(s => (<span key={s.key} onClick={() => { const el = document.getElementById(`section-${s.key}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }} style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '4px 12px', borderRadius: 16, fontSize: 13, cursor: 'pointer', fontWeight: 500 }}>{s.icon} {domainTitle(s.title, lang)}</span>))}
         </div>
       </div>
-      {sections.map(({ key, Component }, i) => (
+        <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+          {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
+          <Component />
+{(activePage === "overview" || !activePage) ?       sections.map(({ key, Component }, i) => (
         <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
           {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
           <Component />
         </div>
-      ))}
+      ))} : sections.filter(s => s.key === activePage).map(({ key, Component }) => <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}><Component /></div>)}
     </div>
   )
 }

@@ -19,7 +19,7 @@ const sections = [
   { key: 'social-media', icon: '📱', title: { en: 'Social & Community', 'zh-CN': '社区媒体', 'zh-TW': '社群媒體' }, desc: { en: 'Social networks, content platforms, forums, video sites', 'zh-CN': '社交平台、内容社区、论坛、视频网站', 'zh-TW': '社群平台、內容社群、論壇、影片網站' }, Component: SocialMediaOverview },
   { key: 'image-resources', icon: '🖼️', title: { en: 'Image Resources', 'zh-CN': '图片专区', 'zh-TW': '圖片專區' }, desc: { en: 'Free stock photos, color tools, editors, AI cutout, logos', 'zh-CN': '免费图库、配色、在线修图、AI抠图、Logo设计', 'zh-TW': '免費圖庫、配色、在線修圖、AI摳圖、Logo設計' }, Component: ImageResourcesOverview },
 ]
-export default function NavToolsOverview() {
+export default function NavToolsOverview({ activePage }: { activePage?: string }) {
   const { lang } = useT()
   const L = (a: MultiLang, b?: string, c?: string) => {
     if (typeof a !== 'string') return tText(a, lang)
@@ -45,19 +45,26 @@ export default function NavToolsOverview() {
         {/* Category tags */}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {sections.map(s => (
-            <span key={s.key} onClick={() => { const el = document.getElementById(`section-${s.key}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }} style={{ cursor: 'pointer', background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '4px 12px', borderRadius: 16, fontSize: 13, textDecoration: 'none', fontWeight: 500, }}>
+            <span key={s.key} onClick={() => { const el = document.getElementById(`section-${s.key}`); if (el) el.scrollIntoView({ behavior: "instant", block: 'start' }) }} style={{ cursor: 'pointer', background: 'rgba(255,255,255,0.15)', color: '#fff', padding: '4px 12px', borderRadius: 16, fontSize: 13, textDecoration: 'none', fontWeight: 500, }}>
               {s.icon} {s.title[lang as 'en' | 'zh-CN' | 'zh-TW']}
             </span>
           ))}
         </div>
       </div>
       {/* Sections */}
-      {sections.map(({ key, Component }, i) => (
-        <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
-          {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
-          <Component />
-        </div>
-      ))}
+      {(activePage === 'overview' || !activePage)
+        ? sections.map(({ key, Component }, i) => (
+            <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+              {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
+              <Component />
+            </div>
+          ))
+        : sections.filter(s => s.key === activePage).map(({ key, Component }) => (
+            <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+              <Component />
+            </div>
+          ))
+      }
     </div>
   )
 }

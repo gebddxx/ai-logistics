@@ -152,7 +152,7 @@ function AppContent() {
     if (domain && activePage !== 'overview') {
       const timer = setTimeout(() => {
         const el = document.getElementById(`section-${activePage}`)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        if (el) el.scrollIntoView({ behavior: "instant", block: 'start' })
       }, 500)
       return () => clearTimeout(timer)
     }
@@ -166,7 +166,7 @@ function AppContent() {
   const handleSelectPage = (key: string) => {
     setActivePage(key)
     const el = document.getElementById(`section-${key}`)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (el) el.scrollIntoView({ behavior: "instant", block: 'start' })
   }
 
   const handleBack = () => setDomain(null)
@@ -181,19 +181,17 @@ function AppContent() {
 
   const renderPage = () => {
     if (domain === null) return <Home onEnter={handleEnterDomain} />
-    return <>
-      {domain === 'nav-tools' && <NavToolsOverview />}
-      {domain === 'ai-industries' && <IndustriesOverview />}
-      {domain === 'aigc' && <AigcOverview />}
-      {domain === 'ai-dev' && <AiDevOverview />}
-      {domain === 'ai-news' && <AiNews />}
-      {!['nav-tools','ai-industries','aigc','ai-dev','ai-news'].includes(domain || '') && <NotFound />}
-    </>
+    if (domain === 'ai-news') return <AiNews />
+    if (domain === 'nav-tools') return <NavToolsOverview activePage={activePage} />
+    if (domain === 'ai-industries') return <IndustriesOverview activePage={activePage} />
+    if (domain === 'aigc') return <AigcOverview activePage={activePage} />
+    if (domain === 'ai-dev') return <AiDevOverview activePage={activePage} />
+    return <NotFound />
   }
 
   return (
     <div className={styles.app}>
-      <Header onBack={domain ? handleBack : undefined} onNavigate={(d, s) => { if (!d) { handleBack(); return } handleEnterDomain(d); if (s) { setActivePage(s); setTimeout(() => { const el = document.getElementById(`section-${s}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }, 400) } }} />
+      <Header onBack={domain ? handleBack : undefined} onNavigate={(d, s) => { if (!d) { handleBack(); return } handleEnterDomain(d); if (s) { setActivePage(s); setTimeout(() => { const el = document.getElementById(`section-${s}`); if (el) el.scrollIntoView({ behavior: "instant", block: 'start' }) }, 400) } }} />
       <div className={styles.body}>
         <Sidebar domain={domain} activePage={activePage} onSelectPage={handleSelectPage} onSelectDomain={handleEnterDomain} onHome={handleBack} />
         <div className={styles.handle} onMouseDown={onMouseDown} />

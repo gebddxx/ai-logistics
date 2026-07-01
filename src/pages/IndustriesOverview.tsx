@@ -32,7 +32,7 @@ const sections = [
   { key: 'climate', icon: '🌍', title: { en: 'Climate', 'zh-CN': '环保气候', 'zh-TW': '環保氣候', ja: '環境・気候', ko: '환경 · 기후', es: 'Clima' }, Component: ClimateOverview },
   { key: 'govtech', icon: '🏛️', title: { en: 'GovTech', 'zh-CN': '政务智慧城市', 'zh-TW': '政務智慧城市', ja: '行政・スマートシティ', ko: '행정 · 스마트시티', es: 'Gobierno' }, Component: GovTechOverview },
 ]
-export default function IndustriesOverview() {
+export default function IndustriesOverview({ activePage }: { activePage?: string }) {
   const { lang } = useT()
   const L = (a: MultiLang, b?: string, c?: string) => {
     if (typeof a !== 'string') return tText(a, lang)
@@ -57,12 +57,15 @@ export default function IndustriesOverview() {
           ))}
         </div>
       </div>
-      {sections.map(({ key, Component }, i) => (
+        <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
+          {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
+          <Component />
+{(activePage === "overview" || !activePage) ?       sections.map(({ key, Component }, i) => (
         <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}>
           {i > 0 && <div style={{ height: 2, background: 'linear-gradient(90deg, var(--primary), transparent)', margin: '32px 0 40px', borderRadius: 1 }} />}
           <Component />
         </div>
-      ))}
+      ))} : sections.filter(s => s.key === activePage).map(({ key, Component }) => <div key={key} id={`section-${key}`} style={{ scrollMarginTop: 80 }}><Component /></div>)}
     </div>
   )
 }
