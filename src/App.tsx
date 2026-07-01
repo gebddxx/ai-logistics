@@ -7,7 +7,10 @@ import Breadcrumb from './components/Breadcrumb'
 import { useT } from './contexts/LanguageContext'
 import Home from './pages/Home'
 import AiNews from './pages/AiNews'
+import NotFound from './pages/NotFound'
 import BackToTop from './components/BackToTop'
+import Footer from './components/Footer'
+import ErrorBoundary from './components/ErrorBoundary'
 
 // Code-split domain pages — only load what the user navigates to
 const NavToolsOverview = lazy(() => import('./pages/NavToolsOverview'))
@@ -38,6 +41,7 @@ function toHash(domain: string | null, page: string) {
 }
 
 function AppContent() {
+  const { lang } = useT()
   const [initialDomain, initialPage] = parseHash()
   const [domain, setDomain] = useState<string | null>(initialDomain)
   const [activePage, setActivePage] = useState(initialPage)
@@ -166,6 +170,16 @@ function AppContent() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
+  const handleBack = () => setDomain(null)
+
+  // Dynamic page title
+  useEffect(() => {
+    if (domain === null) { document.title = 'AI Navigator'; return }
+    const d = domains.find(dd => dd.key === domain)
+    const title = d ? domainTitle(d.title, lang) : domain
+    document.title = title + ' · AI Navigator'
+  }, [domain, lang])
+
   const renderPage = () => {
     if (domain === null) return <Home onEnter={handleEnterDomain} />
     return (
@@ -175,11 +189,10 @@ function AppContent() {
         {domain === 'aigc' && <AigcOverview />}
         {domain === 'ai-dev' && <AiDevOverview />}
         {domain === 'ai-news' && <AiNews />}
+        {!['nav-tools','ai-industries','aigc','ai-dev','ai-news'].includes(domain || '') && <NotFound />}
       </Suspense>
     )
   }
-
-  const handleBack = () => setDomain(null)
 
   return (
     <div className={styles.app}>
@@ -187,11 +200,14 @@ function AppContent() {
       <div className={styles.body}>
         <Sidebar domain={domain} activePage={activePage} onSelectPage={handleSelectPage} onSelectDomain={handleEnterDomain} onHome={handleBack} />
         <div className={styles.handle} onMouseDown={onMouseDown} />
-        <main className={styles.content} data-scroll-container>
-          <BreadcrumbBlock domain={domain} activePage={activePage} onBack={handleBack} onSelectPage={handleSelectPage} />
-          {renderPage()}
-        </main>
+        <ErrorBoundary>
+          <main className={styles.content} data-scroll-container>
+            <BreadcrumbBlock domain={domain} activePage={activePage} onBack={handleBack} onSelectPage={handleSelectPage} />
+            {renderPage()}
+          </main>
+        </ErrorBoundary>
       </div>
+      <Footer />
       <BackToTop />
     </div>
   )

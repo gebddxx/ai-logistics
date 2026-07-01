@@ -28,16 +28,17 @@ export default function Header({ onBack, onNavigate }: Props) {
       <span className={styles.badge}>{t.header.badge}</span>
       <span className={styles.spacer} />
       {onNavigate && <SearchBox onNavigate={onNavigate} />}
-      <div className={styles.langGroup}>
-        {LANGS.map((l) => (
-          <button
-            key={l.key}
-            className={`${styles.langBtn} ${lang === l.key ? styles.langActive : ''}`}
-            onClick={() => setLang(l.key as Lang)}
-          >
-            {l.label}
-          </button>
-        ))}
+      <div className={styles.langWrap}>
+        <span className={styles.langIcon}>🌐</span>
+        <select
+          className={styles.langSelect}
+          value={lang}
+          onChange={e => setLang(e.target.value as Lang)}
+        >
+          {LANGS.map(l => (
+            <option key={l.key} value={l.key}>{l.label}</option>
+          ))}
+        </select>
       </div>
       <button className={styles.themeBtn} onClick={toggle} title="Toggle theme">
         {theme === 'light' ? '🌙' : '☀️'}

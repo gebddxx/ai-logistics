@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light dark;
+}
+
+@view-transition { navigation: auto; }
+
 :root,
 [data-theme='light'] {
   --bg-body: #f1f5f9;
