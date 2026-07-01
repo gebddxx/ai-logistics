@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef, lazy, Suspense } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { LanguageProvider } from './contexts/LanguageContext'
 import Header from './components/Header'
@@ -12,11 +12,10 @@ import BackToTop from './components/BackToTop'
 import Footer from './components/Footer'
 import ErrorBoundary from './components/ErrorBoundary'
 
-// Code-split domain pages — only load what the user navigates to
-const NavToolsOverview = lazy(() => import('./pages/NavToolsOverview'))
-const IndustriesOverview = lazy(() => import('./pages/IndustriesOverview'))
-const AigcOverview = lazy(() => import('./pages/AigcOverview'))
-const AiDevOverview = lazy(() => import('./pages/AiDevOverview'))
+import NavToolsOverview from './pages/NavToolsOverview'
+import IndustriesOverview from './pages/IndustriesOverview'
+import AigcOverview from './pages/AigcOverview'
+import AiDevOverview from './pages/AiDevOverview'
 
 import { domains } from './data/domains'
 import { domainTitle } from './i18n/translate'
@@ -182,16 +181,14 @@ function AppContent() {
 
   const renderPage = () => {
     if (domain === null) return <Home onEnter={handleEnterDomain} />
-    return (
-      <Suspense fallback={<div style={{ padding: 40, textAlign: 'center', color: 'var(--text-muted)' }}>加载中…</div>}>
-        {domain === 'nav-tools' && <NavToolsOverview />}
-        {domain === 'ai-industries' && <IndustriesOverview />}
-        {domain === 'aigc' && <AigcOverview />}
-        {domain === 'ai-dev' && <AiDevOverview />}
-        {domain === 'ai-news' && <AiNews />}
-        {!['nav-tools','ai-industries','aigc','ai-dev','ai-news'].includes(domain || '') && <NotFound />}
-      </Suspense>
-    )
+    return <>
+      {domain === 'nav-tools' && <NavToolsOverview />}
+      {domain === 'ai-industries' && <IndustriesOverview />}
+      {domain === 'aigc' && <AigcOverview />}
+      {domain === 'ai-dev' && <AiDevOverview />}
+      {domain === 'ai-news' && <AiNews />}
+      {!['nav-tools','ai-industries','aigc','ai-dev','ai-news'].includes(domain || '') && <NotFound />}
+    </>
   }
 
   return (
