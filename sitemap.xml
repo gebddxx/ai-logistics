@@ -33,7 +33,8 @@
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/ppt-gen</loc><priority>0.7</priority></url>
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/web-gen</loc><priority>0.7</priority></url>
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/app-gen</loc><priority>0.7</priority></url>
-  <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/software-gen</loc><priority>0.7</priority></url>
+  <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/software-gen</loc>
+  <url><loc>https://gebddxx.github.io/ai-for-everything/#/aigc/interview</loc><priority>0.7</priority></url><priority>0.7</priority></url>
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/ai-dev</loc><priority>0.9</priority></url>
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/ai-dev/gemini</loc><priority>0.7</priority></url>
   <url><loc>https://gebddxx.github.io/ai-for-everything/#/ai-dev/codex</loc><priority>0.7</priority></url>
